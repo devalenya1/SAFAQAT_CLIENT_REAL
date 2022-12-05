@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "833878694949",
+    "project_id": "safaqat-8b934",
+    "storage_bucket": "safaqat-8b934.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833878694949:android:0bd4a6358e53576d7773cc",
+        "android_client_info": {
+          "package_name": "com.safaqat.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833878694949-ln5ias85aa24edqfarropr9cgupcu8en.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMYyQfACpa7lQNgjO_gWaJGOoprOlTqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833878694949-ln5ias85aa24edqfarropr9cgupcu8en.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
