@@ -42,34 +42,47 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 
+
     <!-- Permission options for the `camera` group -->
     <key>NSCameraUsageDescription</key>
-    <string>User can upload and change her profile picture from Camera</string>
+    <string>Safaqat wants to capture your profile picture</string>
 
 	<!-- Permission options for the `photos` group -->
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>User can upload and change her profile picture from PhotoLibrary</string>
+    <string>Safaqat wants access gallery for your profile picture</string>
 
     <key>NSContactsUsageDescription</key>
-    <string>contacts</string>
+    <string>Safaqat wants to access this to show people on map</string>
 
     <key>NSCalendarsUsageDescription</key>
-    <string>calendar</string>
+    <string>Safaqat wants to access this to add maps event on calendar</string>
 
-    <key>NSAppleMusicUsageDescription </key>
-    <string>app music</string>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>Safaqat wants to access this to save GPS audio</string>
+    
+    <key>FacebookClientToken</key>
+    <string>55f29ed5dc374a7a6b5ff389d382cc8b</string>
 
     <key>NSMotionUsageDescription</key>
-    <string>motion</string>
+    <string>Safaqat wants to use this to track your live location</string>
 
-    <key>NSSpeechRecognitionUsageDescription </key>
-    <string>speech recognition</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Safaqat wants to access your microphone to search on map</string>
 
     <key>NSLocationAlwaysUsageDescription</key>
-    <string>location always</string>
+    <string>Safaqat wants to locate you on map</string>
 
     <key>NSLocationWhenInUseUsageDescription</key>
-    <string>location when in use</string>
+    <string>Safaqat wants to track your location on map</string>
+
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Safaqat wants to have access to your bluetooth</string>
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Safaqat wants to track your current location on map</string>
+
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Safaqat wants to have access to your bluetooth</string>
 
 
 
