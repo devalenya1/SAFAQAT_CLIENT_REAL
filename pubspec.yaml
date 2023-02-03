@@ -30,6 +30,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   http: ^0.13.4
+  firebase_core_platform_interface: 4.5.1
+  firebase_messaging: ^13.0.4 
   provider: ^6.0.0
   json_annotation: ^4.1.0
   logging: ^1.0.2
@@ -71,7 +73,7 @@ dependencies:
   flutter_facebook_auth: ^4.3.4+2
   google_sign_in: ^5.1.1
   google_maps_place_picker_mb: ^2.0.0-mb.20
-  firebase_messaging: ^11.4.1
+  #firebase_messaging: ^11.4.1
   one_context: ^2.0.0
   social_share: ^2.2.1
   flutter_typeahead: ^4.0.0
