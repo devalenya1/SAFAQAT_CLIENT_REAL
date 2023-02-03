@@ -69,7 +69,7 @@ dependencies:
   flutter_facebook_auth: ^4.3.4+2
   google_sign_in: ^5.1.1
   google_maps_place_picker_mb: ^2.0.0-mb.20
-   firebase_messaging: ^11.4.1
+  # firebase_messaging: ^11.4.1
   one_context: ^2.0.0
   social_share: ^2.2.1
   flutter_typeahead: ^4.0.0
