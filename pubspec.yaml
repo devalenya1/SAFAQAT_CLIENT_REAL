@@ -20,6 +20,7 @@ version: 1.0.1+1
 environment:
   sdk: ">=2.7.0 <3.0.0"
 dependency_overrides:
+ # firebase_core: ^0.2.5
   # firebase_core_platform_interface: 4.5.1
   
   
@@ -29,7 +30,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   http: ^0.13.4
-  firebase_core: ^0.2.5
   provider: ^6.0.0
   json_annotation: ^4.1.0
   logging: ^1.0.2
