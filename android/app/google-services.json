@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "833878694949-n4ah7attud7be3oc04p20rijrgf2fv6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.safaqat.app",
+            "certificate_hash": "50a0b1d35380bc04284fc43ba1a730c7581ceadb"
+          }
+        },
+        {
           "client_id": "833878694949-ln5ias85aa24edqfarropr9cgupcu8en.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "833878694949-ln5ias85aa24edqfarropr9cgupcu8en.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "833878694949-ah8sr2ho29c114691hh9qd930komnub8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.safaqat.app"
+              }
             }
           ]
         }
