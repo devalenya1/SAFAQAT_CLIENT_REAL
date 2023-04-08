@@ -736,21 +736,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               ],
                             ),
                           ),
-                          // SingleChildScrollView(
-                          //   child: Column(
-                          //     children: [
-                          //       Padding(
-                          //         padding: const EdgeInsets.fromLTRB(
-                          //           4.0,
-                          //           16.0,
-                          //           8.0,
-                          //           0.0,
-                          //         ),
-                          //         child: buildHomeAuctionProducts(context),
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
 
                           SingleChildScrollView(
                             child: Padding(
@@ -988,7 +973,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1040,7 +1025,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1092,7 +1077,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1144,7 +1129,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1198,7 +1183,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1250,7 +1235,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1302,7 +1287,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1354,7 +1339,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1406,7 +1391,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1458,7 +1443,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1510,7 +1495,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1562,7 +1547,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -1613,7 +1598,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     foregroundColor: Colors.white,
                                     backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
                                   ),
-                                  onTap: () {
+                                  onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) {
                                     return Filter();
                                     }));
@@ -3559,8 +3544,22 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Raffel Products",
-                                  style: TextStyle(fontSize: 13),
+                                  "BUY AND WIN PRODUCTS",
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    foregroundColor: Colors.white,
+                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Butwin()),
+                                    );
+                                  },
+                                  child: Text('See More'),
                                 ),
                               ],
                             ),
@@ -3575,7 +3574,91 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
                                     8.0,
                                     0.0,
                                   ),
-                                  child: buildHomeRaffelProducts(context),
+                                  child: SingleChildScrollView(
+                                    child: Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          4.0, 16.0, 8.0, 0.0),
+                                      child: Column(
+                                        children: [
+                                          GridView.builder(
+                                            itemCount:
+                                                _raffelProductList.length,
+                                            controller:
+                                                _raffelProductScrollController,
+                                            gridDelegate:
+                                                SliverGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 2,
+                                                    crossAxisSpacing: 10,
+                                                    mainAxisSpacing: 10,
+                                                    // childAspectRatio: 0.518,
+                                                    childAspectRatio: 2 / 4.5
+                                                    // childAspectRatio: 0.7,
+                                                    ),
+                                            padding: EdgeInsets.all(8),
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
+                                            shrinkWrap: true,
+                                            itemBuilder: (context, index) {
+                                              return FutureBuilder<
+                                                  DetailedProduct>(
+                                                future: getAuctionProductFuture(
+                                                    _raffelProductList[index]
+                                                        .id),
+                                                // initialData: initialData,
+                                                builder: (BuildContext context,
+                                                    AsyncSnapshot snapshot) {
+                                                  if (snapshot
+                                                          .connectionState ==
+                                                      ConnectionState.waiting)
+                                                    return Container(
+                                                      width: 30,
+                                                      height: 30,
+                                                      child: FittedBox(
+                                                        fit: BoxFit.scaleDown,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          color: MyTheme
+                                                              .accent_color,
+                                                        ),
+                                                      ),
+                                                    );
+
+                                                  // return Container(
+                                                  //   child: Text(snapshot.data.toString()),
+                                                  return ProductCard(
+                                                      id: _raffelProductList[
+                                                              index]
+                                                          .id,
+                                                      image: _raffelProductList[
+                                                              index]
+                                                          .thumbnail_image,
+                                                      name: _raffelProductList[
+                                                              index]
+                                                          .name,
+                                                      main_price:
+                                                          _raffelProductList[
+                                                                  index]
+                                                              .main_price,
+                                                      stroked_price:
+                                                          _raffelProductList[
+                                                                  index]
+                                                              .stroked_price,
+                                                      // isAuction: true,
+                                                      buyToWinProducts: true,
+                                                      productDetails:
+                                                          snapshot.data,
+                                                      has_discount:
+                                                          _raffelProductList[
+                                                                  index]
+                                                              .has_discount);
+                                                },
+                                              );
+                                            },
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -3597,6 +3680,8 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
     );
   }
 
+  
+  
   buildHomeRaffelProducts(context) {
     if (_isProductInitial && _raffelProductList.length == 0) {
       return SingleChildScrollView(
@@ -3609,7 +3694,7 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
         // 2
         //addAutomaticKeepAlives: true,
         itemCount: _raffelProductList.length,
-        //controller: _featuredProductScrollController,
+        //controller: _raffelProductScrollController,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
@@ -3625,10 +3710,9 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
               image: _raffelProductList[index].thumbnail_image,
               name: _raffelProductList[index].name,
               main_price: _raffelProductList[index].main_price,
-              isAuction: false,
               stroked_price: _raffelProductList[index].stroked_price,
-              // isAuction: false,
-
+              buyToWinProducts: true,
+              isAuction: false,
               has_discount: _raffelProductList[index].has_discount);
         },
       );
@@ -3640,6 +3724,8 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
       return Container(); // should never be happening
     }
   }
+  
+  
 
   AppBar buildAppBar(double statusBarHeight, BuildContext context) {
   }
