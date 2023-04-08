@@ -62,8 +62,6 @@ class Buywin extends StatefulWidget {
   _BuywinState createState() => _BuywinState();
 }
 
-
-
 class Home extends StatefulWidget {
   Home({Key key, this.title, this.show_back_button = false, go_back = true})
       : super(key: key);
@@ -660,7 +658,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
                                     Navigator.push(
@@ -721,7 +720,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
                                     Navigator.push(
@@ -736,7 +736,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               ],
                             ),
                           ),
-
                           SingleChildScrollView(
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(
@@ -831,13 +830,14 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Butwin()),
+                                          builder: (context) => Buywin()),
                                     );
                                   },
                                   child: Text('See More'),
@@ -971,11 +971,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1023,11 +1025,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1075,11 +1079,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1127,11 +1133,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1181,11 +1189,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1233,11 +1243,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1285,11 +1297,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1337,11 +1351,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1389,11 +1405,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1441,11 +1459,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1493,11 +1513,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1545,11 +1567,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1596,11 +1620,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
+                                    backgroundColor: Color.fromRGBO(
+                                        229, 25, 25, 0.8), // foreground
                                   ),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                    return Filter();
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return Filter();
                                     }));
                                   },
                                   child: Text('See More'),
@@ -1644,7 +1670,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       ),
     );
   }
-
 
   buildHomeAuctionProducts(context) async {
     if (_isProductInitial && _auctionProductList.length == 0) {
@@ -2276,8 +2301,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     }
   }
 
-  
-
   buildHomeFeaturedProducts(context) {
     if (_isProductInitial && _featuredProductList.length == 0) {
       return SingleChildScrollView(
@@ -2824,13 +2847,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   }
 }
 
-
-
-
-
-
-
-
 class _AuctionState extends State<Auction> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   ScrollController _auctionProductScrollController;
@@ -3130,9 +3146,6 @@ class _AuctionState extends State<Auction> with TickerProviderStateMixin {
   buildAppBar(double statusBarHeight, BuildContext context) {}
 }
 
-
-
-
 class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   ScrollController _featuredProductScrollController;
@@ -3352,8 +3365,7 @@ class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
     }
   }
 
-  AppBar buildAppBar(double statusBarHeight, BuildContext context) {
-  }
+  AppBar buildAppBar(double statusBarHeight, BuildContext context) {}
 
   buildHomeSearchBox(BuildContext context) {
     return TextField(
@@ -3403,9 +3415,6 @@ class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
     );
   }
 }
-
-
-
 
 class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -3547,20 +3556,6 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
                                   "BUY AND WIN PRODUCTS",
                                   style: TextStyle(fontSize: 16),
                                 ),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    foregroundColor: Colors.white,
-                                    backgroundColor: Color.fromRGBO(229, 25, 25, 0.8), // foreground
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Butwin()),
-                                    );
-                                  },
-                                  child: Text('See More'),
-                                ),
                               ],
                             ),
                           ),
@@ -3601,7 +3596,7 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
                                             itemBuilder: (context, index) {
                                               return FutureBuilder<
                                                   DetailedProduct>(
-                                                future: getAuctionProductFuture(
+                                                future: getRaffelProductFuture(
                                                     _raffelProductList[index]
                                                         .id),
                                                 // initialData: initialData,
@@ -3680,8 +3675,6 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
     );
   }
 
-  
-  
   buildHomeRaffelProducts(context) {
     if (_isProductInitial && _raffelProductList.length == 0) {
       return SingleChildScrollView(
@@ -3724,11 +3717,18 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
       return Container(); // should never be happening
     }
   }
-  
-  
 
-  AppBar buildAppBar(double statusBarHeight, BuildContext context) {
+  Future<DetailedProduct> getRaffelProductFuture(id) async {
+    log("Start working");
+
+    var productDetailsResponse =
+        await ProductRepository().getProductDetails(id: id);
+    var productDetails = productDetailsResponse.detailed_products[0];
+    log(productDetailsResponse.toString());
+    return productDetails;
   }
+
+  AppBar buildAppBar(double statusBarHeight, BuildContext context) {}
 
   buildHomeSearchBox(BuildContext context) {
     return TextField(
@@ -3771,7 +3771,7 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
       width: double.infinity,
       color: Colors.white,
       child: Center(
-        child: Text(_totalProductData == _featuredProductList.length
+        child: Text(_totalProductData == _raffelProductList.length
             ? AppLocalizations.of(context).common_no_more_products
             : AppLocalizations.of(context).common_loading_more_products),
       ),
