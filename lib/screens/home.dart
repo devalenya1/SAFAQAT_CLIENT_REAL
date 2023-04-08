@@ -532,73 +532,73 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                     physics: const BouncingScrollPhysics(
                         parent: AlwaysScrollableScrollPhysics()),
                     slivers: <Widget>[
-//                       SliverList(
-//                         delegate: SliverChildListDelegate([
-//                           AppConfig.purchase_code == ""
-//                               ? Padding(
-//                                   padding: const EdgeInsets.fromLTRB(
-//                                     8.0,
-//                                     16.0,
-//                                     8.0,
-//                                     0.0,
-//                                   ),
-//                                   child: Container(
-//                                     height: 140,
-//                                     color: Colors.black,
-//                                     child: Stack(
-//                                       children: [
-//                                         Positioned(
-//                                             left: 20,
-//                                             top: 0,
-//                                             child: AnimatedBuilder(
-//                                                 animation:
-//                                                     pirated_logo_animation,
-//                                                 builder: (context, child) {
-//                                                   return Image.asset(
-//                                                     "assets/pirated_square.png",
-//                                                     height:
-//                                                         pirated_logo_animation
-//                                                             .value,
-//                                                     color: Colors.white,
-//                                                   );
-//                                                 })),
-//                                         Center(
-//                                           child: Padding(
-//                                             padding: const EdgeInsets.only(
-//                                                 top: 24.0, left: 24, right: 24),
-//                                             child: Text(
-//                                               "This is the SAFAQAT demo app..",
-//                                               style: TextStyle(
-//                                                   color: Colors.white,
-//                                                   fontSize: 18),
-//                                             ),
-//                                           ),
-//                                         ),
-//                                       ],
-//                                     ),
-//                                   ),
-//                                 )
-//                               : Container(),
-//                           Padding(
-//                             padding: const EdgeInsets.fromLTRB(
-//                               8.0,
-//                               16.0,
-//                               8.0,
-//                               0.0,
-//                             ),
-//                             child: buildHomeCarouselSlider(context),
-//                           ),
-//                           Padding(
-//                             padding: const EdgeInsets.fromLTRB(
-//                               8.0,
-//                               16.0,
-//                               8.0,
-//                               0.0,
-//                             ),
-//                             child: buildHomeMenuRow(context),
-//                           ),
-//                         ]),
-//                       ),
+                      SliverList(
+                        delegate: SliverChildListDelegate([
+                          AppConfig.purchase_code == ""
+                              ? Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                    8.0,
+                                    16.0,
+                                    8.0,
+                                    0.0,
+                                  ),
+                                  child: Container(
+                                    height: 140,
+                                    color: Colors.black,
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                            left: 20,
+                                            top: 0,
+                                            child: AnimatedBuilder(
+                                                animation:
+                                                    pirated_logo_animation,
+                                                builder: (context, child) {
+                                                  return Image.asset(
+                                                    "assets/pirated_square.png",
+                                                    height:
+                                                        pirated_logo_animation
+                                                            .value,
+                                                    color: Colors.white,
+                                                  );
+                                                })),
+                                        Center(
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 24.0, left: 24, right: 24),
+                                            child: Text(
+                                              "This is the SAFAQAT demo app..",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              : Container(),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                              8.0,
+                              16.0,
+                              8.0,
+                              0.0,
+                            ),
+                            child: buildHomeCarouselSlider(context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                              8.0,
+                              16.0,
+                              8.0,
+                              0.0,
+                            ),
+                            child: buildHomeMenuRow(context),
+                          ),
+                        ]),
+                      ),
                       SliverList(
                         delegate: SliverChildListDelegate([
                           Padding(
