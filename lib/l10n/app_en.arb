@@ -451,6 +451,11 @@
   "home_screen_home_products": "Home Appliances",
   "home_screen_phone_products": "Mobile Phones",
   "home_screen_baby_products": "Baby Product",
+
+  "home_screen_computing_products": "Computing Product",
+  "product_screen_start_bid": "Start Bid",
+  "product_screen_deal_has_ended": "Deal Has Ended",
+
   "home_screen_health_and_beauty": "Health and Beauty",
   "home_screen_electronic_products": "Electronic Product",
   "home_screen_ffree_delivery_products": "Free Delivery",
@@ -466,7 +471,6 @@
   "product_screen_product_screen_your_bid_has_been_placed_sucessfully": "Your bid has been places sucessfully",
   "product_screen_product_screen_cant_bid_less_than_the_min_bid_amount": "You cant bid less than the minimum bid",
   "product_screen_submit": "Submit",
-  "product_screen_deal_has_eded": "Deal Has Ended",
   "product_screen_closing_at": "Closing At",
   "product_screen_day": "Day",
   "product_screen_hour": "Hour",
