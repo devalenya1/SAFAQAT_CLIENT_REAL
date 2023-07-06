@@ -442,10 +442,13 @@
 
 
 
+  "home_screen_computing_products": "منتج الحوسبة",
+  "product_screen_start_bid": "بدء المزايدة",
+  "product_screen_deal_has_ended": "انتهت الصفقة",
   "home_screen_auction_products": "المزاد_المنتجات",
   "home_screen_see_more": "شاهد المزيد",
-  "home_screen_buy_to_win": "\u062a\u062d\u062f\u064a\u062b",
-  "home_screen_video_game": "المزاد_المنتجات",
+  "home_screen_buy_to_win": "اشتر لتربح",
+  "home_screen_video_game": "لعبة فيديو",
   "home_screen_mobile_accessories": "\u062a\u062d\u062f\u064a\u062b",
   "home_screen_fashion_products": "\u062a\u062d\u062f\u064a\u062b",
   "home_screen_home_products": "\u062a\u062d\u062f\u064a\u062b",
