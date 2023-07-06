@@ -650,9 +650,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "FEATURED PRODUCTS",
-                                  //AppLocalizations.of(context)
-                                  //.home_screen_featured_products,
+                                  AppLocalizations.of(context)
+                                  .home_screen_featured_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -668,7 +667,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                           builder: (context) => Featured()),
                                     );
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
+                                  // style: TextStyle(fontSize: 16),
                                   // style: TextStyle(fontSize: 7),
                                 ),
                               ],
@@ -713,8 +714,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "AUCTION PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_auction_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -730,7 +730,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                           builder: (context) => Auction()),
                                     );
                                   },
-                                  child: Text('See More'),
+                                  
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                   // style: TextStyle(fontSize: 7),
                                 ),
                               ],
@@ -823,8 +825,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "BUY AND WIN PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_buy_to_win,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -840,7 +841,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                           builder: (context) => Buywin()),
                                     );
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                   // style: TextStyle(fontSize: 7),
                                 ),
                               ],
@@ -964,8 +966,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "VIDEO GAMES",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_video_game,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -980,7 +981,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1018,8 +1020,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "MOBILE ACCESSORIES",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_mobile_accessories,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1034,7 +1035,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1072,8 +1074,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "FASHION PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_fashion_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1088,7 +1089,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1126,8 +1128,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "HOME APPLIANCES",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_home_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1142,7 +1143,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1182,8 +1184,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "MOBILE PHONES",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_phone_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1198,7 +1199,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1236,8 +1238,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "BABY PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_baby_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1252,7 +1253,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1290,8 +1292,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "HEALTH AND BEAUITY",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_health_and_beauty,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1306,7 +1307,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1344,8 +1346,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "ELECTRONIC PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_electronic_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1360,7 +1361,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1398,8 +1400,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "COMPUTING PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_computing_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1414,7 +1415,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1452,8 +1454,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "FREE DELIVERY",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_ffree_delivery_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1468,7 +1469,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1506,8 +1508,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "MATHEMATICAL PRODUCTS",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_Mathematical_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1522,7 +1523,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1560,8 +1562,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "GROCERIES",
-                                  //AppLocalizations.of(context).home_screen_featured_products,
+                                  AppLocalizations.of(context).home_screen_geoceries_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1576,7 +1577,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
@@ -1614,7 +1616,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "ALL PRODUCTS",
+                                  AppLocalizations.of(context).home_screen_all_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1629,7 +1631,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text('See More'),
+                                  child: Text(AppLocalizations.of(context)
+                                  .home_screen_see_more,
                                 ),
                               ],
                             ),
