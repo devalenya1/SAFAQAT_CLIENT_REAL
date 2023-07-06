@@ -1450,8 +1450,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       return TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
         int endDate = int.parse(productDetails.buytowin_end_date + "000");
         if (dateNow < endDate) {
-          return Text(
-            "WIN:",
+          return Text(AppLocalizations.of(context).product_screen_win,
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
           );
@@ -1558,8 +1557,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               : EdgeInsets.only(right: 8.0),
           child: Container(
             width: 75,
-            child: Text(
-              "Start Bid",
+            child: Text(AppLocalizations.of(context).product_screen_start_bid,
               //AppLocalizations.of(context).product_details_screen_total_price,
               style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
             ),
@@ -1585,8 +1583,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               : EdgeInsets.only(right: 8.0),
           child: Container(
             width: 75,
-            child: Text(
-              "Condition",
+            child: Text(AppLocalizations.of(context).product_screen_condition,
               //AppLocalizations.of(context).product_details_screen_total_price,
               style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
             ),
@@ -1767,8 +1764,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         )),
                                     FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: Text(
-                                        "Sold",
+                                      child: Text(AppLocalizations.of(context).product_screen_sold,
                                         style: TextStyle(
                                             // fontSize: 25,
                                             // color: MyTheme.accent_color,
@@ -1793,8 +1789,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   children: [
                                     FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: Text(
-                                        "out of",
+                                      child: Text(AppLocalizations.of(context).product_screen_out_of,
                                         style: TextStyle(
                                             // fontSize: 25,
                                             // color: MyTheme.accent_color,
@@ -2247,8 +2242,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           //  side:
                           //   BorderSide(color: Colors.black, width: 1.0)
                         ),
-                        child: Text(
-                          "Bid Now",
+                        child: Text(AppLocalizations.of(context).product_screen_bid_now,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -2277,7 +2271,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         SizedBox(
                                           height: 20,
                                         ),
-                                        Text("Place Bid Price*"),
+                                        Text(AppLocalizations.of(context).product_screen_place_bid_price),
                                         SizedBox(
                                           height: 10,
                                         ),
@@ -2375,16 +2369,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                     log("value ${controller.text}");
                                                     Navigator.pop(context);
                                                     const snackBar = SnackBar(
-                                                      content: Text(
-                                                          'Your Bid has been placed, Successfully..'),
+                                                      content: Text(AppLocalizations.of(context).product_screen_your_bid_has_been_placed_sucessfully),
                                                     );
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(snackBar);
                                                   } else {
                                                     const snackBar = SnackBar(
-                                                      content: Text(
-                                                          'Cant bid less than the min amount.'),
+                                                      content: Text(AppLocalizations.of(context).product_screen_cant_bid_less_than_the_min_bid_amount),
                                                     );
                                                     ScaffoldMessenger.of(
                                                             context)
@@ -2397,7 +2389,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                         MyTheme.white,
                                                     backgroundColor:
                                                         MyTheme.accent_color),
-                                                child: const Text('Submit')),
+                                                child: const Text(AppLocalizations.of(context).product_screen_submit)),
                                           ],
                                         )
                                       ],
@@ -2972,8 +2964,7 @@ TimerBuilder buildTimer(
               fit: BoxFit.scaleDown,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Text(
-                  "Deal Has Ended:",
+                child: Text(AppLocalizations.of(context).product_screen_deal_has_ended,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -2993,8 +2984,7 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(
-                        "Closing at:",
+                      Text(AppLocalizations.of(context).product_closing_at,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
@@ -3003,22 +2993,22 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer("Day", time.days.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Hour", time.hours.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Min", time.min.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Sec", time.sec.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3046,8 +3036,7 @@ TimerBuilder buildTimer(
                 borderRadius: BorderRadius.circular(8.0),
                 color: MyTheme.accent_color,
                 child: Center(
-                    child: Text(
-                  "Voucher Has Ended:",
+                    child: Text(AppLocalizations.of(context).product_screen_voucher_has_ended,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 )),
               ),
@@ -3067,8 +3056,7 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(
-                        "Closing at:",
+                      Text(AppLocalizations.of(context).product_screen_closing_at,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
@@ -3077,17 +3065,17 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer("Day", time.days.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Hour", time.hours.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Min", time.min.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
@@ -3097,7 +3085,7 @@ TimerBuilder buildTimer(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Sec", time.sec.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3152,8 +3140,7 @@ TimerBuilder buildTimer(
               fit: BoxFit.scaleDown,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Text(
-                  "Auction Has Ended:",
+                child: Text(AppLocalizations.of(context).product_screen_auction_has_ended,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -3172,8 +3159,7 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(
-                        "Auction Ends:",
+                      Text(AppLocalizations.of(context).product_screen_auction_ends
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
@@ -3182,17 +3168,17 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer("Day", time.days.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Hour", time.hours.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Min", time.min.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
@@ -3202,7 +3188,7 @@ TimerBuilder buildTimer(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer("Sec", time.sec.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3229,8 +3215,7 @@ TimerBuilder buildTimer(
                     fit: BoxFit.scaleDown,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: Text(
-                        "Deal Has Ended:",
+                      child: Text(AppLocalizations.of(context).product_screen_deal_has_ended,
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -3258,8 +3243,7 @@ Padding buildTextTimer(String text, String time) {
               width: 35,
               height: 40,
               child: Center(
-                  child: Text(
-                time,
+                  child: Text(AppLocalizations.of(context).product_screen_time,
                 style: TextStyle(color: Colors.white),
               )),
             ),
