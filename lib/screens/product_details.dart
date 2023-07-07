@@ -2369,14 +2369,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                     log("value ${controller.text}");
                                                     Navigator.pop(context);
                                                     const snackBar = SnackBar(
-                                                      content: Text(Your bid has been placed sucessfully),
+                                                      content: Text('Your bid has been placed sucessfully'),
                                                     );
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(snackBar);
                                                   } else {
                                                     const snackBar = SnackBar( 
-                                                      content: Text(Cant bid less than the min bidamount),
+                                                      content: Text('Cant bid less than the min bidamount'),
                                                     );
                                                     ScaffoldMessenger.of(
                                                             context)
@@ -2389,7 +2389,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                         MyTheme.white,
                                                     backgroundColor:
                                                         MyTheme.accent_color),
-                                                child: const Text(submit),
+                                                child: const Text('submit'),
                                           ],
                                         )
                                       ],
@@ -2993,22 +2993,22 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer(Day, time.days.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(Hour, time.hours.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(Min, time.min.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(Sec, time.sec.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3065,17 +3065,17 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer(Day, time.days.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(Hour, time.hours.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(Min, time.min.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
@@ -3085,7 +3085,7 @@ TimerBuilder buildTimer(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(Sec, time.sec.toString()),
+                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3159,7 +3159,7 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(AppLocalizations.of(context).product_screen_auction_ends
+                      Text(AppLocalizations.of(context).product_screen_auction_ends,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),

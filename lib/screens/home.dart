@@ -651,7 +651,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               children: [
                                 Text(
                                   AppLocalizations.of(context)
-                                  .home_screen_featured_products,
+                                      .home_screen_featured_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -667,10 +667,12 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                           builder: (context) => Featured()),
                                     );
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                  // style: TextStyle(fontSize: 16),
-                                  // style: TextStyle(fontSize: 7),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                    // style: TextStyle(fontSize: 16),
+                                    // style: TextStyle(fontSize: 7),
+                                  ),
                                 ),
                               ],
                             ),
@@ -714,7 +716,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_auction_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_auction_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -730,11 +733,12 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                           builder: (context) => Auction()),
                                     );
                                   },
-                                  
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                  // style: TextStyle(fontSize: 7),
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                    // style: TextStyle(fontSize: 7),
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -825,7 +829,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_buy_to_win,
+                                  AppLocalizations.of(context)
+                                      .home_screen_buy_to_win,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -841,10 +846,12 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                           builder: (context) => Buywin()),
                                     );
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                  // style: TextStyle(fontSize: 7),
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                    // style: TextStyle(fontSize: 7),
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -966,7 +973,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_video_game,
+                                  AppLocalizations.of(context)
+                                      .home_screen_video_game,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -981,9 +989,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1020,7 +1030,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_mobile_accessories,
+                                  AppLocalizations.of(context)
+                                      .home_screen_mobile_accessories,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1035,9 +1046,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1074,7 +1087,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_fashion_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_fashion_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1089,9 +1103,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1128,7 +1144,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_home_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_home_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1143,9 +1160,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1184,7 +1203,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_phone_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_phone_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1199,9 +1219,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1238,7 +1260,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_baby_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_baby_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1253,9 +1276,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1292,7 +1317,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_health_and_beauty,
+                                  AppLocalizations.of(context)
+                                      .home_screen_health_and_beauty,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1307,9 +1333,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1346,7 +1374,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_electronic_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_electronic_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1361,9 +1390,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1400,7 +1431,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_computing_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_computing_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1415,9 +1447,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1454,7 +1488,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_ffree_delivery_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_ffree_delivery_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1469,9 +1504,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1508,7 +1545,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_Mathematical_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_Mathematical_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1523,9 +1561,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1562,7 +1602,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_geoceries_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_geoceries_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1577,9 +1618,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -1616,7 +1659,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  AppLocalizations.of(context).home_screen_all_products,
+                                  AppLocalizations.of(context)
+                                      .home_screen_all_products,
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 ElevatedButton(
@@ -1631,9 +1675,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                       return Filter();
                                     }));
                                   },
-                                  child: Text(AppLocalizations.of(context)
-                                  .home_screen_see_more,
-                                ),
+                                  child: Text(
+                                    AppLocalizations.of(context)
+                                        .home_screen_see_more,
+                                  ),
+                                )
                               ],
                             ),
                           ),
