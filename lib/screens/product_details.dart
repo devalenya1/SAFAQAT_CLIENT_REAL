@@ -2390,6 +2390,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                                     backgroundColor:
                                                         MyTheme.accent_color),
                                                 child: const Text('submit'),
+                                              )
                                           ],
                                         )
                                       ],
