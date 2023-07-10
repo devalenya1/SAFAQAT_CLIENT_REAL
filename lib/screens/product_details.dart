@@ -1570,7 +1570,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: productDetails.youtube,
+                  url: _productDetails.youtube,
                 );
               }));
             },
