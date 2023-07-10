@@ -18,6 +18,8 @@ import 'package:social_share/social_share.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'package:toast/toast.dart';
 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../app_config.dart';
 import '../custom/toast_component.dart';
 import '../data_model/product_details_response.dart';
@@ -511,6 +513,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                 content: Container(
                   width: 400,
                   child: SingleChildScrollView(
+                    // key: Row(
+
+                    // ),
+
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -654,7 +660,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             AppLocalizations.of(context)
                                 .common_send_in_all_capital,
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 1, 59, 23),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600),
                           ),
@@ -1088,6 +1094,25 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ),
                 ])),
                 SliverList(
+                    delegate: SliverChildListDelegate([
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      16.0,
+                      0.0,
+                      16.0,
+                      0.0,
+                    ),
+                    child: _productDetails != null
+                        ? buildSocialProfileRow()
+                        : ShimmerHelper().buildBasicShimmer(
+                            height: 50.0,
+                          ),
+                  ),
+                  Divider(
+                    height: 24,
+                  ),
+                ])),
+                SliverList(
                   delegate: SliverChildListDelegate([
                     Padding(
                       padding: const EdgeInsets.fromLTRB(
@@ -1450,7 +1475,8 @@ class _ProductDetailsState extends State<ProductDetails> {
       return TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
         int endDate = int.parse(productDetails.buytowin_end_date + "000");
         if (dateNow < endDate) {
-          return Text(AppLocalizations.of(context).product_screen_win,
+          return Text(
+            AppLocalizations.of(context).product_screen_win,
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
           );
@@ -1458,6 +1484,104 @@ class _ProductDetailsState extends State<ProductDetails> {
         return Container();
       });
     } else {}
+  }
+
+  Row buildSocialProfileRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: "${_productDetails.instagram}",
+                );
+              }));
+            },
+            child: Icon(
+              FontAwesomeIcons.instagram,
+              size: 20,
+            ),
+          ),
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: "${_productDetails.facebook}",
+                );
+              }));
+            },
+            child: Icon(
+              FontAwesomeIcons.facebook,
+              size: 20,
+            ),
+          ),
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: "${_productDetails.whatsapp}",
+                );
+              }));
+            },
+            child: Icon(
+              FontAwesomeIcons.whatsapp,
+              size: 20,
+            ),
+          ),
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: "${_productDetails.twitter}",
+                );
+              }));
+            },
+            child: Icon(
+              FontAwesomeIcons.twitter,
+              size: 20,
+            ),
+          ),
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: "${_productDetails.google}",
+                );
+              }));
+            },
+            child: Icon(
+              FontAwesomeIcons.google,
+              size: 20,
+            ),
+          ),
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: "${_productDetails.youtube}",
+                );
+              }));
+            },
+            child: Icon(
+              FontAwesomeIcons.youtube,
+              size: 20,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   Row buildSellerRow(BuildContext context) {
@@ -1557,7 +1681,8 @@ class _ProductDetailsState extends State<ProductDetails> {
               : EdgeInsets.only(right: 8.0),
           child: Container(
             width: 75,
-            child: Text(AppLocalizations.of(context).product_screen_start_bid,
+            child: Text(
+              AppLocalizations.of(context).product_screen_start_bid,
               //AppLocalizations.of(context).product_details_screen_total_price,
               style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
             ),
@@ -1583,7 +1708,8 @@ class _ProductDetailsState extends State<ProductDetails> {
               : EdgeInsets.only(right: 8.0),
           child: Container(
             width: 75,
-            child: Text(AppLocalizations.of(context).product_screen_condition,
+            child: Text(
+              AppLocalizations.of(context).product_screen_condition,
               //AppLocalizations.of(context).product_details_screen_total_price,
               style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
             ),
@@ -1764,7 +1890,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         )),
                                     FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: Text(AppLocalizations.of(context).product_screen_sold,
+                                      child: Text(
+                                        AppLocalizations.of(context)
+                                            .product_screen_sold,
                                         style: TextStyle(
                                             // fontSize: 25,
                                             // color: MyTheme.accent_color,
@@ -1789,7 +1917,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   children: [
                                     FittedBox(
                                       fit: BoxFit.scaleDown,
-                                      child: Text(AppLocalizations.of(context).product_screen_out_of,
+                                      child: Text(
+                                        AppLocalizations.of(context)
+                                            .product_screen_out_of,
                                         style: TextStyle(
                                             // fontSize: 25,
                                             // color: MyTheme.accent_color,
@@ -2242,7 +2372,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                           //  side:
                           //   BorderSide(color: Colors.black, width: 1.0)
                         ),
-                        child: Text(AppLocalizations.of(context).product_screen_bid_now,
+                        child: Text(
+                          AppLocalizations.of(context).product_screen_bid_now,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -2271,7 +2402,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         SizedBox(
                                           height: 20,
                                         ),
-                                        Text(AppLocalizations.of(context).product_screen_place_bid_price),
+                                        Text(AppLocalizations.of(context)
+                                            .product_screen_place_bid_price),
                                         SizedBox(
                                           height: 10,
                                         ),
@@ -2323,74 +2455,72 @@ class _ProductDetailsState extends State<ProductDetails> {
                                               width: 5,
                                             ),
                                             ElevatedButton(
-                                                onPressed: () async {
-                                                  productDetailsController
-                                                      .isStartBidding
-                                                      .value = true;
-                                                  RegExp regExp = new RegExp(
-                                                    r"^[1-9]\d*$",
-                                                    caseSensitive: false,
-                                                    multiLine: false,
+                                              onPressed: () async {
+                                                productDetailsController
+                                                    .isStartBidding
+                                                    .value = true;
+                                                RegExp regExp = new RegExp(
+                                                  r"^[1-9]\d*$",
+                                                  caseSensitive: false,
+                                                  multiLine: false,
+                                                );
+                                                if (regExp.hasMatch(controller
+                                                        .text
+                                                        .toString()) &&
+                                                    double.parse(controller.text
+                                                            .toString()) >
+                                                        double.parse(
+                                                            _productDetails
+                                                                .starting_bid)) {
+                                                  Uri url2 = Uri.parse(
+                                                    "${AppConfig.BASE_URL}/products/bid",
                                                   );
-                                                  if (regExp.hasMatch(controller
-                                                          .text
-                                                          .toString()) &&
-                                                      double.parse(controller
-                                                              .text
-                                                              .toString()) >
-                                                          double.parse(
-                                                              _productDetails
-                                                                  .starting_bid)) {
-                                                    Uri url2 = Uri.parse(
-                                                      "${AppConfig.BASE_URL}/products/bid",
-                                                    );
-                                                    final response2 =
-                                                        await http.post(url2,
-                                                            headers: {
-                                                              'Content-Type':
-                                                                  'application/json',
-                                                              'Accept':
-                                                                  'application/json',
-                                                              'Authorization':
-                                                                  "Bearer ${access_token.$}",
-                                                            },
-                                                            body: jsonEncode({
-                                                              "product_id": widget
-                                                                  .id
-                                                                  .toString(),
-                                                              "user_id": user_id
-                                                                  .$
-                                                                  .toString(),
-                                                              "amount": controller
-                                                                  .text
-                                                                  .toString(),
-                                                              "type": "1"
-                                                            }));
-                                                    log("value ${controller.text}");
-                                                    Navigator.pop(context);
-                                                    const snackBar = SnackBar(
-                                                      content: Text('Your bid has been placed sucessfully'),
-                                                    );
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(snackBar);
-                                                  } else {
-                                                    const snackBar = SnackBar( 
-                                                      content: Text('Cant bid less than the min bidamount'),
-                                                    );
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(snackBar);
-                                                  }
-                                                  // productDetails.type
-                                                },
-                                                style: ElevatedButton.styleFrom(
-                                                    foregroundColor:
-                                                        MyTheme.white,
-                                                    backgroundColor:
-                                                        MyTheme.accent_color),
-                                                child: const Text('submit'),
-                                              )
+                                                  final response2 =
+                                                      await http.post(url2,
+                                                          headers: {
+                                                            'Content-Type':
+                                                                'application/json',
+                                                            'Accept':
+                                                                'application/json',
+                                                            'Authorization':
+                                                                "Bearer ${access_token.$}",
+                                                          },
+                                                          body: jsonEncode({
+                                                            "product_id": widget
+                                                                .id
+                                                                .toString(),
+                                                            "user_id": user_id.$
+                                                                .toString(),
+                                                            "amount": controller
+                                                                .text
+                                                                .toString(),
+                                                            "type": "1"
+                                                          }));
+                                                  log("value ${controller.text}");
+                                                  Navigator.pop(context);
+                                                  const snackBar = SnackBar(
+                                                    content: Text(
+                                                        'Your bid has been placed sucessfully'),
+                                                  );
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(snackBar);
+                                                } else {
+                                                  const snackBar = SnackBar(
+                                                    content: Text(
+                                                        'Cant bid less than the min bidamount'),
+                                                  );
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(snackBar);
+                                                }
+                                                // productDetails.type
+                                              },
+                                              style: ElevatedButton.styleFrom(
+                                                  foregroundColor:
+                                                      MyTheme.white,
+                                                  backgroundColor:
+                                                      MyTheme.accent_color),
+                                              child: const Text('submit'),
+                                            )
                                           ],
                                         )
                                       ],
@@ -2496,7 +2626,8 @@ class _ProductDetailsState extends State<ProductDetails> {
           ratingWidget: RatingWidget(
             full: Icon(FontAwesome.star, color: Colors.amber),
             empty:
-                Icon(FontAwesome.star, color: Color.fromRGBO(224, 224, 225, 1)), half: null,
+                Icon(FontAwesome.star, color: Color.fromRGBO(224, 224, 225, 1)),
+            half: null,
           ),
           itemPadding: EdgeInsets.only(right: 1.0),
           onRatingUpdate: (rating) {
@@ -2965,7 +3096,8 @@ TimerBuilder buildTimer(
               fit: BoxFit.scaleDown,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Text(AppLocalizations.of(context).product_screen_deal_has_ended,
+                child: Text(
+                  AppLocalizations.of(context).product_screen_deal_has_ended,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -2985,7 +3117,8 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(AppLocalizations.of(context).product_screen_closing_at,
+                      Text(
+                        AppLocalizations.of(context).product_screen_closing_at,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
@@ -2994,22 +3127,30 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_day,
+                          time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_hour,
+                          time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_min,
+                          time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_sec,
+                          time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3037,7 +3178,8 @@ TimerBuilder buildTimer(
                 borderRadius: BorderRadius.circular(8.0),
                 color: MyTheme.accent_color,
                 child: Center(
-                    child: Text(AppLocalizations.of(context).product_screen_voucher_has_ended,
+                    child: Text(
+                  AppLocalizations.of(context).product_screen_voucher_has_ended,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 )),
               ),
@@ -3057,7 +3199,8 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(AppLocalizations.of(context).product_screen_closing_at,
+                      Text(
+                        AppLocalizations.of(context).product_screen_closing_at,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
@@ -3066,17 +3209,23 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_day,
+                          time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_hour,
+                          time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_min,
+                          time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
@@ -3086,7 +3235,9 @@ TimerBuilder buildTimer(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_sec,
+                          time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3141,7 +3292,8 @@ TimerBuilder buildTimer(
               fit: BoxFit.scaleDown,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Text(AppLocalizations.of(context).product_screen_auction_has_ended,
+                child: Text(
+                  AppLocalizations.of(context).product_screen_auction_has_ended,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -3160,7 +3312,9 @@ TimerBuilder buildTimer(
                 children: [
                   Row(
                     children: [
-                      Text(AppLocalizations.of(context).product_screen_auction_ends,
+                      Text(
+                        AppLocalizations.of(context)
+                            .product_screen_auction_ends,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
@@ -3169,17 +3323,23 @@ TimerBuilder buildTimer(
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      buildTextTimer(AppLocalizations.of(context).product_screen_day, time.days.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_day,
+                          time.days.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_hour, time.hours.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_hour,
+                          time.hours.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_min, time.min.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_min,
+                          time.min.toString()),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
@@ -3189,7 +3349,9 @@ TimerBuilder buildTimer(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(":"),
                       ),
-                      buildTextTimer(AppLocalizations.of(context).product_screen_sec, time.sec.toString()),
+                      buildTextTimer(
+                          AppLocalizations.of(context).product_screen_sec,
+                          time.sec.toString()),
                     ],
                   ),
                 ],
@@ -3216,7 +3378,9 @@ TimerBuilder buildTimer(
                     fit: BoxFit.scaleDown,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: Text(AppLocalizations.of(context).product_screen_deal_has_ended,
+                      child: Text(
+                        AppLocalizations.of(context)
+                            .product_screen_deal_has_ended,
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -3245,7 +3409,7 @@ Padding buildTextTimer(String text, String time) {
               height: 40,
               child: Center(
                   child: Text(
-                    time,
+                time,
                 style: TextStyle(color: Colors.white),
               )),
             ),
