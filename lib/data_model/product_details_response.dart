@@ -46,6 +46,12 @@ class DetailedProduct {
       this.shop_name,
       this.shop_logo,
       this.photos,
+      this.whatsapp,
+      this.facebook,
+      this.instagram,
+      this.twitter,
+      this.google,
+      this.youtube,
       this.thumbnail_image,
       this.tags,
       this.price_high_low,
@@ -82,6 +88,14 @@ class DetailedProduct {
   int shop_id;
   String shop_name;
   String shop_logo;
+
+  String facebook;
+  String twitter;
+  String youtube;
+  String instagram;
+  String whatsapp;
+  String google;
+
   List<Photo> photos;
   String thumbnail_image;
   List<String> tags;
@@ -121,6 +135,12 @@ class DetailedProduct {
         shop_id: json["shop_id"],
         shop_name: json["shop_name"],
         shop_logo: json["shop_logo"],
+        facebook: json["facebook"],
+        whatsapp: json["whatsapp"],
+        instagram: json["instagram"],
+        youtube: json["youtube"],
+        google: json["google"],
+        twitter: json["twitter"],
         photos: List<Photo>.from(json["photos"].map((x) => Photo.fromJson(x))),
         thumbnail_image: json["thumbnail_image"],
         tags: List<String>.from(json["tags"].map((x) => x)),
@@ -163,6 +183,12 @@ class DetailedProduct {
         "shop_id": shop_id,
         "shop_name": shop_name,
         "shop_logo": shop_logo,
+        "facebook": facebook,
+        "whatsapp": whatsapp,
+        "twitter": twitter,
+        "instagram": instagram,
+        "youtube": youtube,
+        "google": google,
         "photos": List<dynamic>.from(photos.map((x) => x.toJson())),
         "thumbnail_image": thumbnail_image,
         "tags": List<dynamic>.from(tags.map((x) => x)),
