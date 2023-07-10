@@ -1495,7 +1495,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: "${_productDetails.instagram}",
+                  url: _productDetails.instagram,
                 );
               }));
             },
@@ -1510,7 +1510,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: "${_productDetails.facebook}",
+                  url: _productDetails.facebook,
                 );
               }));
             },
@@ -1525,7 +1525,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: "${_productDetails.whatsapp}",
+                  url: _productDetails.whatsapp,
                 );
               }));
             },
@@ -1540,7 +1540,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: "${_productDetails.twitter}",
+                  url: _productDetails.twitter,
                 );
               }));
             },
@@ -1555,7 +1555,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: "${_productDetails.google}",
+                  url: _productDetails.google,
                 );
               }));
             },
@@ -1570,7 +1570,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return CommonWebviewScreen(
-                  url: "${_productDetails.youtube}",
+                  url: productDetails.youtube,
                 );
               }));
             },
