@@ -1496,20 +1496,12 @@ class _ProductDetailsState extends State<ProductDetails> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              var url = _productDetails.instagram;
-              // ignore: deprecated_member_use
-              if (await canLaunch(url)) {
-                // ignore: deprecated_member_use
-                await launch(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-
-              // Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //   return CommonWebviewScreen(
-              //     url: "${_productDetails.instagram}",
-              //   );
-              // }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: _productDetails.instagram,
+                  page_name: "Instagram",
+                );
+              }));
             },
             child: Icon(
               FontAwesomeIcons.instagram,
@@ -1520,20 +1512,12 @@ class _ProductDetailsState extends State<ProductDetails> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              var url = _productDetails.facebook;
-              // ignore: deprecated_member_use
-              if (await canLaunch(url)) {
-                // ignore: deprecated_member_use
-                await launch(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-
-              // Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //   return CommonWebviewScreen(
-              //     url: "${_productDetails.facebook}",
-              //   );
-              // }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: _productDetails.facebook,
+                  page_name: "Facebook",
+                );
+              }));
             },
             child: Icon(
               FontAwesomeIcons.facebook,
@@ -1544,20 +1528,12 @@ class _ProductDetailsState extends State<ProductDetails> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              var url = _productDetails.whatsapp;
-              // ignore: deprecated_member_use
-              if (await canLaunch(url)) {
-                // ignore: deprecated_member_use
-                await launch(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-
-              // Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //   return CommonWebviewScreen(
-              //     url: "${_productDetails.whatsapp}",
-              //   );
-              // }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: _productDetails.whatsapp,
+                  page_name: "Whatsapp",
+                );
+              }));
             },
             child: Icon(
               FontAwesomeIcons.whatsapp,
@@ -1568,20 +1544,12 @@ class _ProductDetailsState extends State<ProductDetails> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              var url = _productDetails.instagram;
-              // ignore: deprecated_member_use
-              if (await canLaunch(url)) {
-                // ignore: deprecated_member_use
-                await launch(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-
-              // Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //   return CommonWebviewScreen(
-              //     url: "${_productDetails.twitter}",
-              //   );
-              // }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: _productDetails.twitter,
+                  page_name: "Twitter",
+                );
+              }));
             },
             child: Icon(
               FontAwesomeIcons.twitter,
@@ -1592,20 +1560,12 @@ class _ProductDetailsState extends State<ProductDetails> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              var url = _productDetails.instagram;
-              // ignore: deprecated_member_use
-              if (await canLaunch(url)) {
-                // ignore: deprecated_member_use
-                await launch(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-
-              // Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //   return CommonWebviewScreen(
-              //     url: "${_productDetails.google}",
-              //   );
-              // }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: _productDetails.google,
+                  page_name: "Google",
+                );
+              }));
             },
             child: Icon(
               FontAwesomeIcons.google,
@@ -1616,20 +1576,12 @@ class _ProductDetailsState extends State<ProductDetails> {
         Expanded(
           child: InkWell(
             onTap: () async {
-              var url = _productDetails.instagram;
-              // ignore: deprecated_member_use
-              if (await canLaunch(url)) {
-                // ignore: deprecated_member_use
-                await launch(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-
-              // Navigator.push(context, MaterialPageRoute(builder: (context) {
-              //   return CommonWebviewScreen(
-              //     url: "${_productDetails.youtube}",
-              //   );
-              // }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return CommonWebviewScreen(
+                  url: _productDetails.youtube,
+                  page_name: "YouTube",
+                );
+              }));
             },
             child: Icon(
               FontAwesomeIcons.youtube,
