@@ -45,6 +45,15 @@ import '../ui_elements/list_product_card.dart';
 import '../ui_elements/mini_product_card.dart';
 import 'package:http/http.dart' as http;
 
+// _launchURLApp() async {
+//   var url = Uri.parse("https://www.geeksforgeeks.org/");
+//   if (await canLaunchUrl(url)) {
+//     await launchUrl(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }
+
 class ProductDetails extends StatefulWidget {
   int id;
   bool isAuction;
@@ -1489,20 +1498,75 @@ class _ProductDetailsState extends State<ProductDetails> {
     } else {}
   }
 
+  _launchURLFacebook() async {
+    var url = Uri.parse(_productDetails.facebook);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLYoutube() async {
+    var url = Uri.parse(_productDetails.youtube);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLGoogle() async {
+    var url = Uri.parse(_productDetails.google);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLWhatsapp() async {
+    var url = Uri.parse(_productDetails.whatsapp);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLTwitter() async {
+    var url = Uri.parse(_productDetails.twitter);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  _launchURLInstagram() async {
+    var url = Uri.parse(_productDetails.instagram);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   Row buildSocialProfileRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Expanded(
           child: InkWell(
-            onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CommonWebviewScreen(
-                  url: _productDetails.instagram,
-                  page_name: "Instagram",
-                );
-              }));
-            },
+            onTap: _launchURLInstagram,
+            // onTap: () {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return CommonWebviewScreen(
+            //       url: _productDetails.instagram,
+            //       page_name: "Instagram",
+            //     );
+            //   }));
+            // },
             child: Icon(
               FontAwesomeIcons.instagram,
               size: 20,
@@ -1511,14 +1575,15 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         Expanded(
           child: InkWell(
-            onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CommonWebviewScreen(
-                  url: _productDetails.facebook,
-                  page_name: "Facebook",
-                );
-              }));
-            },
+            onTap: _launchURLFacebook,
+            // onTap: () async {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return CommonWebviewScreen(
+            //       url: _productDetails.facebook,
+            //       page_name: "Facebook",
+            //     );
+            //   }));
+            // },
             child: Icon(
               FontAwesomeIcons.facebook,
               size: 20,
@@ -1527,14 +1592,15 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         Expanded(
           child: InkWell(
-            onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CommonWebviewScreen(
-                  url: _productDetails.whatsapp,
-                  page_name: "Whatsapp",
-                );
-              }));
-            },
+            onTap: _launchURLWhatsapp,
+            // onTap: () async {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return CommonWebviewScreen(
+            //       url: _productDetails.whatsapp,
+            //       page_name: "Whatsapp",
+            //     );
+            //   }));
+            // },
             child: Icon(
               FontAwesomeIcons.whatsapp,
               size: 20,
@@ -1543,14 +1609,15 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         Expanded(
           child: InkWell(
-            onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CommonWebviewScreen(
-                  url: _productDetails.twitter,
-                  page_name: "Twitter",
-                );
-              }));
-            },
+            onTap: _launchURLTwitter,
+            // onTap: () async {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return CommonWebviewScreen(
+            //       url: _productDetails.twitter,
+            //       page_name: "Twitter",
+            //     );
+            //   }));
+            // },
             child: Icon(
               FontAwesomeIcons.twitter,
               size: 20,
@@ -1559,14 +1626,15 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         Expanded(
           child: InkWell(
-            onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CommonWebviewScreen(
-                  url: _productDetails.google,
-                  page_name: "Google",
-                );
-              }));
-            },
+            onTap: _launchURLGoogle,
+            // onTap: () async {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return CommonWebviewScreen(
+            //       url: _productDetails.google,
+            //       page_name: "Google",
+            //     );
+            //   }));
+            // },
             child: Icon(
               FontAwesomeIcons.google,
               size: 20,
@@ -1575,14 +1643,15 @@ class _ProductDetailsState extends State<ProductDetails> {
         ),
         Expanded(
           child: InkWell(
-            onTap: () async {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CommonWebviewScreen(
-                  url: _productDetails.youtube,
-                  page_name: "YouTube",
-                );
-              }));
-            },
+            onTap: _launchURLYoutube,
+            // onTap: () async {
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+            //     return CommonWebviewScreen(
+            //       url: _productDetails.youtube,
+            //       page_name: "YouTube",
+            //     );
+            //   }));
+            // },
             child: Icon(
               FontAwesomeIcons.youtube,
               size: 20,
