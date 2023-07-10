@@ -30,6 +30,22 @@ class ProductRepository {
     return productMiniResponseFromJson(response.body);
   }
 
+  Future<ProductMiniResponse> getBuytowinProducts({page = 1}) async {
+    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/buytowin");
+    final response = await http.get(url, headers: {
+      "App-Language": app_language.$,
+    });
+    return productMiniResponseFromJson(response.body);
+  }
+
+  Future<ProductMiniResponse> getVoucherProducts({page = 1}) async {
+    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/voucher");
+    final response = await http.get(url, headers: {
+      "App-Language": app_language.$,
+    });
+    return productMiniResponseFromJson(response.body);
+  }
+
   Future<ProductMiniResponse> getAllProducts({page = 1}) async {
     Uri url = Uri.parse("${AppConfig.BASE_URL}/products/");
     final response = await http.get(url, headers: {
@@ -70,10 +86,6 @@ class ProductRepository {
     return productMiniResponseFromJson(response.body);
   }
 
-  
-
-
-
   Future<ProductMiniResponse> getClothesProducts({page = 1}) async {
     Uri url = Uri.parse("${AppConfig.BASE_URL}/products/category/16");
     final response = await http.get(url, headers: {
@@ -81,9 +93,6 @@ class ProductRepository {
     });
     return productMiniResponseFromJson(response.body);
   }
-
-
-
 
   Future<ProductMiniResponse> getPhoneProducts({page = 1}) async {
     Uri url = Uri.parse("${AppConfig.BASE_URL}/products/category/4");
@@ -156,8 +165,6 @@ class ProductRepository {
     });
     return productMiniResponseFromJson(response.body);
   }
-
-
 
   /*--------
   --------
