@@ -480,8 +480,9 @@
   "product_screen_auction_has_ended": "Auction Has Ended",
   "product_screen_auction_ends": "Auction Ends",
   "product_screen_time": "Time",
+  "home_screen_all_sellers": "All Sellers",
 
-
+  
   "seller_details_screen_btn_view_all_products": "View All Products From This Seller",
   "seller_products_screen_search_products_of_shop": "Search products of shop"
 }
