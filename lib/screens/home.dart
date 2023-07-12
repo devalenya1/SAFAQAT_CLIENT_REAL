@@ -88,6 +88,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   int _current_slider = 0;
   ScrollController _featuredProductScrollController;
   ScrollController _auctionProductScrollController;
+  ScrollController _buytowinProductScrollController;
+  ScrollController _voucherProductScrollController;
   ScrollController _applianceProductScrollController;
   //Homeappliance
   ScrollController _allProductScrollController;
@@ -114,6 +116,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   var _featuredCategoryList = [];
   var _featuredProductList = [];
   var _auctionProductList = [];
+  var _buytowinProductList = [];
+  var _voucherProductList = [];
   var _allProductList = [];
   var _raffelProductList = [];
   var _toysProductList = [];
@@ -172,6 +176,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     fetchFeaturedCategories();
     fetchFeaturedProducts();
     fetchAuctionProducts();
+    fetchBuytowinProducts();
+    fetchVoucherProducts();
     fetchAllProducts();
     fetchRaffelProducts();
     fetchToysProducts();
@@ -233,6 +239,30 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     );
 
     _auctionProductList.addAll(productResponse.products);
+    _isProductInitial = false;
+    _totalProductData = productResponse.meta.total;
+    _showProductLoadingContainer = false;
+    setState(() {});
+  }
+
+  fetchBuytowinProducts() async {
+    var productResponse = await ProductRepository().getBuytowinProducts(
+      page: _productPage,
+    );
+
+    _buytowinProductList.addAll(productResponse.products);
+    _isProductInitial = false;
+    _totalProductData = productResponse.meta.total;
+    _showProductLoadingContainer = false;
+    setState(() {});
+  }
+
+  fetchVoucherProducts() async {
+    var productResponse = await ProductRepository().getVoucherProducts(
+      page: _productPage,
+    );
+
+    _voucherProductList.addAll(productResponse.products);
     _isProductInitial = false;
     _totalProductData = productResponse.meta.total;
     _showProductLoadingContainer = false;
@@ -456,6 +486,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     _featuredProductList.clear();
     _auctionProductList.clear();
     _allProductList.clear();
+    _buytowinProductList.clear();
+    _voucherProductList.clear();
     _raffelProductList.clear();
     _toysProductList.clear();
     _toolsProductList.clear();
@@ -2510,8 +2542,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Container(
-                    height: 57,
-                    width: 57,
+                    height: 47,
+                    width: 47,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border:
@@ -2548,8 +2580,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Container(
-                    height: 57,
-                    width: 57,
+                    height: 47,
+                    width: 47,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border:
@@ -2581,8 +2613,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Container(
-                    height: 57,
-                    width: 57,
+                    height: 47,
+                    width: 47,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border:
@@ -2593,8 +2625,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                     )),
                 Padding(
                     padding: const EdgeInsets.only(top: 8),
-                    child: Text("Top Selling",
-                        //AppLocalizations.of(context).home_screen_top_sellers,
+                    child: Text(
+                        AppLocalizations.of(context).home_screen_top_sellers,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color.fromRGBO(132, 132, 132, 1),
@@ -2615,8 +2647,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Container(
-                    height: 57,
-                    width: 57,
+                    height: 47,
+                    width: 47,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border:
@@ -2640,6 +2672,76 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         GestureDetector(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return TopSellingProducts();
+            }));
+          },
+          child: Container(
+            height: 100,
+            width: MediaQuery.of(context).size.width / 5 - 4,
+            child: Column(
+              children: [
+                Container(
+                    height: 47,
+                    width: 47,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border:
+                            Border.all(color: MyTheme.light_grey, width: 1)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Image.asset("assets/top_sellers.png"),
+                    )),
+                Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                        AppLocalizations.of(context).home_screen_top_sellers,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(132, 132, 132, 1),
+                            fontWeight: FontWeight.w300))),
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return Filter(
+                selected_filter: "sellers",
+              );
+            }));
+          },
+          child: Container(
+            height: 100,
+            width: MediaQuery.of(context).size.width / 5 - 4,
+            child: Column(
+              children: [
+                Container(
+                    height: 47,
+                    width: 47,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border:
+                            Border.all(color: MyTheme.light_grey, width: 1)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Image.asset("assets/todays_deal.png"),
+                    )),
+                Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Text(
+                        AppLocalizations.of(context).home_screen_all_sellers,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromRGBO(132, 132, 132, 1),
+                            fontWeight: FontWeight.w300))),
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
               return FlashDealList();
             }));
           },
@@ -2649,8 +2751,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Container(
-                    height: 57,
-                    width: 57,
+                    height: 47,
+                    width: 47,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border:

@@ -417,6 +417,7 @@ class _CheckoutState extends State<Checkout> {
   }
 
   pay_by_wallet() async {
+    loading();
     var orderCreateResponse = await PaymentRepository()
         .getOrderCreateResponseFromWallet(
             _selected_payment_method_key, _grandTotalValue);
