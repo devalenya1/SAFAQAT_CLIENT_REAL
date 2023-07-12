@@ -1,7 +1,3 @@
-import 'dart:developer';
-
-import '../data_model/product_details_response.dart';
-import '../repositories/product_repository.dart';
 import '../screens/seller_products.dart';
 import 'package:flutter/material.dart';
 import '../my_theme.dart';
@@ -28,14 +24,12 @@ class SellerDetails extends StatefulWidget {
 class _SellerDetailsState extends State<SellerDetails> {
   ScrollController _mainScrollController = ScrollController();
   ScrollController _scrollController = ScrollController();
-  ScrollController _auctionProductScrollController;
 
   //init
   int _current_slider = 0;
   List<dynamic> _carouselImageList = [];
   bool _carouselInit = false;
   var _shopDetails;
-  var _auctionProductList = [];
 
   List<dynamic> _newArrivalProducts = [];
   bool _newArrivalProductInit = false;
@@ -239,31 +233,6 @@ class _SellerDetailsState extends State<SellerDetails> {
                           0.0,
                         ),
                         child: buildfeaturedProductList()),
-                    // Padding(
-                    //   padding: const EdgeInsets.fromLTRB(
-                    //     16.0,
-                    //     16.0,
-                    //     16.0,
-                    //     0.0,
-                    //   ),
-                    //   child: Text(
-                    //     AppLocalizations.of(context)
-                    //         .home_screen_auction_products,
-                    //     style: TextStyle(
-                    //         color: MyTheme.font_grey,
-                    //         fontSize: 16,
-                    //         fontWeight: FontWeight.w600),
-                    //   ),
-                    // ),
-                    // Padding(
-                    //     padding: const EdgeInsets.fromLTRB(
-                    //       16.0,
-                    //       16.0,
-                    //       16.0,
-                    //       0.0,
-                    //     ),
-                    //     child: buildauctionProductList()),
-
                     Padding(
                       padding: const EdgeInsets.fromLTRB(
                         16.0,
@@ -271,84 +240,23 @@ class _SellerDetailsState extends State<SellerDetails> {
                         16.0,
                         0.0,
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            AppLocalizations.of(context)
-                                .home_screen_auction_products,
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ],
+                      child: Text(
+                        AppLocalizations.of(context)
+                            .home_screen_auction_products,
+                        style: TextStyle(
+                            color: MyTheme.font_grey,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600),
                       ),
                     ),
-                    SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(4.0, 16.0, 8.0, 0.0),
-                        child: Column(
-                          children: [
-                            GridView.builder(
-                              itemCount: _auctionProductList.length,
-                              controller: _auctionProductScrollController,
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      crossAxisSpacing: 10,
-                                      mainAxisSpacing: 10,
-                                      // childAspectRatio: 0.518,
-                                      childAspectRatio: 2 / 4.3
-                                      // childAspectRatio: 0.7,
-                                      ),
-                              padding: EdgeInsets.all(8),
-                              physics: NeverScrollableScrollPhysics(),
-                              shrinkWrap: true,
-                              itemBuilder: (context, index) {
-                                return FutureBuilder<DetailedProduct>(
-                                  future: getAuctionProductFuture(
-                                      _auctionProductList[index].id),
-                                  // initialData: initialData,
-                                  builder: (BuildContext context,
-                                      AsyncSnapshot snapshot) {
-                                    if (snapshot.connectionState ==
-                                        ConnectionState.waiting)
-                                      return Container(
-                                        width: 30,
-                                        height: 30,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: CircularProgressIndicator(
-                                            color: MyTheme.accent_color,
-                                          ),
-                                        ),
-                                      );
-
-                                    // return Container(
-                                    //   child: Text(snapshot.data.toString()),
-                                    return ProductCard(
-                                        id: _auctionProductList[index].id,
-                                        image: _auctionProductList[index]
-                                            .thumbnail_image,
-                                        name: _auctionProductList[index].name,
-                                        main_price: _auctionProductList[index]
-                                            .main_price,
-                                        stroked_price:
-                                            _auctionProductList[index]
-                                                .stroked_price,
-                                        isAuction: true,
-                                        productDetails: snapshot.data,
-                                        has_discount: _auctionProductList[index]
-                                            .has_discount);
-                                  },
-                                );
-                              },
-                            )
-                          ],
+                    Padding(
+                        padding: const EdgeInsets.fromLTRB(
+                          16.0,
+                          16.0,
+                          16.0,
+                          0.0,
                         ),
-                      ),
-                    ),
-                    Container(
-                      height: 80,
-                    )
+                        child: buildauctionProductList())
                   ]),
                 )
               ],
@@ -399,16 +307,6 @@ class _SellerDetailsState extends State<SellerDetails> {
     }
   }
 
-  Future<DetailedProduct> getAuctionProductFuture(id) async {
-    log("Start working");
-
-    var productDetailsResponse =
-        await ProductRepository().getProductDetails(id: id);
-    var productDetails = productDetailsResponse.detailed_products[0];
-    log(productDetailsResponse.toString());
-    return productDetails;
-  }
-
   buildauctionProductList() {
     if (_auctionProductInit == false && _auctionProducts.length == 0) {
       return SingleChildScrollView(
@@ -436,7 +334,7 @@ class _SellerDetailsState extends State<SellerDetails> {
               main_price: _auctionProducts[index].main_price,
               stroked_price: _auctionProducts[index].stroked_price,
               buyToWinProducts: false,
-              isAuction: true,
+              isAuction: false,
               has_discount: _auctionProducts[index].has_discount);
         },
       );

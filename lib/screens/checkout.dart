@@ -47,6 +47,7 @@ class Checkout extends StatefulWidget {
 }
 
 class _CheckoutState extends State<Checkout> {
+  // ignore: non_constant_identifier_names
   var _selected_payment_method_index = 0;
   var _selected_payment_method = "";
   var _selected_payment_method_key = "";
@@ -65,10 +66,12 @@ class _CheckoutState extends State<Checkout> {
   var _coupon_applied = false;
   BuildContext loadingcontext;
   String payment_type = "cart_payment";
+  // ignore: unused_field
   String _title;
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     /*print("user data");
@@ -142,6 +145,7 @@ class _CheckoutState extends State<Checkout> {
     reset_summary();
   }
 
+  // ignore: non_constant_identifier_names
   reset_summary() {
     _totalString = ". . .";
     _grandTotalValue = 0.00;
@@ -167,8 +171,8 @@ class _CheckoutState extends State<Checkout> {
   }
 
   onCouponApply() async {
-    var coupon_code = _couponController.text.toString();
-    if (coupon_code == "") {
+    var couponCode = _couponController.text.toString();
+    if (couponCode == "") {
       ToastComponent.showDialog(
           AppLocalizations.of(context).checkout_screen_coupon_code_warning,
           gravity: Toast.center,
@@ -177,7 +181,7 @@ class _CheckoutState extends State<Checkout> {
     }
 
     var couponApplyResponse =
-        await CouponRepository().getCouponApplyResponse(coupon_code);
+        await CouponRepository().getCouponApplyResponse(couponCode);
     if (couponApplyResponse.result == false) {
       ToastComponent.showDialog(couponApplyResponse.message,
           gravity: Toast.center, duration: Toast.lengthLong);
