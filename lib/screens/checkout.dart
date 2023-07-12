@@ -167,8 +167,8 @@ class _CheckoutState extends State<Checkout> {
   }
 
   onCouponApply() async {
-    var couponCode = _couponController.text.toString();
-    if (couponCode == "") {
+    var coupon_code = _couponController.text.toString();
+    if (coupon_code == "") {
       ToastComponent.showDialog(
           AppLocalizations.of(context).checkout_screen_coupon_code_warning,
           gravity: Toast.center,
@@ -177,7 +177,7 @@ class _CheckoutState extends State<Checkout> {
     }
 
     var couponApplyResponse =
-        await CouponRepository().getCouponApplyResponse(couponCode);
+        await CouponRepository().getCouponApplyResponse(coupon_code);
     if (couponApplyResponse.result == false) {
       ToastComponent.showDialog(couponApplyResponse.message,
           gravity: Toast.center, duration: Toast.lengthLong);
