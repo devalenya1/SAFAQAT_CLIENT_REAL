@@ -10,10 +10,10 @@ import '../helpers/shared_value_helper.dart';
 class CouponRepository {
   Future<CouponApplyResponse> getCouponApplyResponse(
       // @required String coupon_code) async {
-      @required String couponCode) async {
+      @required String coupon_code) async {
     var post_body =
-        jsonEncode({"user_id": "${user_id.$}", "code": "$couponCode"});
-    // jsonEncode({"user_id": "${user_id.$}", "coupon_code": "$coupon_code"});
+        // jsonEncode({"user_id": "${user_id.$}", "code": "$couponCode"});
+        jsonEncode({"user_id": "${user_id.$}", "coupon_code": "$coupon_code"});
 
     Uri url = Uri.parse("${AppConfig.BASE_URL}/coupon-apply");
     final response = await http.post(url,
