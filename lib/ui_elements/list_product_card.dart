@@ -18,7 +18,7 @@ class ListProductCard extends StatefulWidget {
       this.name,
       this.main_price,
       this.stroked_price,
-      this.has_discount})
+      this.has_discount, bool buyToWinProducts, bool isAuction})
       : super(key: key);
 
   @override
