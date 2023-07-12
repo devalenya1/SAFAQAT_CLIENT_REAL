@@ -171,8 +171,8 @@ class _CheckoutState extends State<Checkout> {
   }
 
   onCouponApply() async {
-    var coupon_code = _couponController.text.toString();
-    if (coupon_code == "") {
+    var couponCode = _couponController.text.toString();
+    if (couponCode == "") {
       ToastComponent.showDialog(
           AppLocalizations.of(context).checkout_screen_coupon_code_warning,
           gravity: Toast.center,
@@ -181,7 +181,7 @@ class _CheckoutState extends State<Checkout> {
     }
 
     var couponApplyResponse =
-        await CouponRepository().getCouponApplyResponse(coupon_code);
+        await CouponRepository().getCouponApplyResponse(couponCode);
     if (couponApplyResponse.result == false) {
       ToastComponent.showDialog(couponApplyResponse.message,
           gravity: Toast.center, duration: Toast.lengthLong);
@@ -191,6 +191,27 @@ class _CheckoutState extends State<Checkout> {
     reset_summary();
     fetchSummary();
   }
+  // onCouponApply() async {
+  //   var coupon_code = _couponController.text.toString();
+  //   if (coupon_code == "") {
+  //     ToastComponent.showDialog(
+  //         AppLocalizations.of(context).checkout_screen_coupon_code_warning,
+  //         gravity: Toast.center,
+  //         duration: Toast.lengthLong);
+  //     return;
+  //   }
+
+  //   var couponApplyResponse =
+  //       await CouponRepository().getCouponApplyResponse(coupon_code);
+  //   if (couponApplyResponse.result == false) {
+  //     ToastComponent.showDialog(couponApplyResponse.message,
+  //         gravity: Toast.center, duration: Toast.lengthLong);
+  //     return;
+  //   }
+
+  //   reset_summary();
+  //   fetchSummary();
+  // }
 
   onCouponRemove() async {
     var couponRemoveResponse =
