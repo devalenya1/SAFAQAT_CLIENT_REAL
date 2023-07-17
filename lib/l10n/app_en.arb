@@ -483,6 +483,10 @@
   "home_screen_all_sellers": "All Sellers",
 
   
+  "check_balance": "Check Card Balance",
+  "tract_order": "Track Order",
+
+  
   "seller_details_screen_btn_view_all_products": "View All Products From This Seller",
   "seller_products_screen_search_products_of_shop": "Search products of shop"
 }
