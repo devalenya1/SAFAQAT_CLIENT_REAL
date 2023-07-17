@@ -7,6 +7,10 @@ import '../screens/profile.dart';
 import '../screens/order_list.dart';
 import '../screens/wishlist.dart';
 
+import '../screens/filter.dart';
+
+import '../screens/common_webview_screen.dart';
+
 import '../screens/login.dart';
 import '../screens/messenger_list.dart';
 import '../screens/wallet.dart';
@@ -40,7 +44,7 @@ class _MainDrawerState extends State<MainDrawer> {
     // }
     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
       return Main();
-    }),(route)=>false);
+    }), (route) => false);
   }
 
   @override
@@ -58,7 +62,7 @@ class _MainDrawerState extends State<MainDrawer> {
                     ? ListTile(
                         leading: CircleAvatar(
                           backgroundImage: NetworkImage(
-                             "${avatar_original.$}",
+                            "${avatar_original.$}",
                           ),
                         ),
                         title: Text("${user_name.$}"),
@@ -100,6 +104,59 @@ class _MainDrawerState extends State<MainDrawer> {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
                         return Main();
+                      }));
+                    }),
+                ListTile(
+                    visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+                    leading: Image.asset("assets/profile.png",
+                        height: 16, color: Color.fromRGBO(153, 153, 153, 1)),
+                    title: Text(
+                        AppLocalizations.of(context).home_screen_all_sellers,
+                        style: TextStyle(
+                            color: Color.fromRGBO(153, 153, 153, 1),
+                            fontSize: 14)),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Filter(
+                          selected_filter: "sellers",
+                        );
+                      }));
+                    }),
+                ListTile(
+                    visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+                    leading: Image.asset("assets/order.png",
+                        height: 16, color: Color.fromRGBO(153, 153, 153, 1)),
+                    title: Text(AppLocalizations.of(context).tract_order,
+                        style: TextStyle(
+                            color: Color.fromRGBO(153, 153, 153, 1),
+                            fontSize: 14)),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return CommonWebviewScreen(
+                          url: "${AppConfig.RAW_BASE_URL}/app-order",
+                          page_name: AppLocalizations.of(context)
+                              .product_details_screen_seller_policy,
+                        );
+                      }));
+                    }),
+                ListTile(
+                    visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+                    leading: Image.asset("assets/order.png",
+                        height: 16, color: Color.fromRGBO(153, 153, 153, 1)),
+                    title: Text(AppLocalizations.of(context).check_balance,
+                        style: TextStyle(
+                            color: Color.fromRGBO(153, 153, 153, 1),
+                            fontSize: 14)),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return CommonWebviewScreen(
+                          url: "${AppConfig.RAW_BASE_URL}/app-balance",
+                          page_name: AppLocalizations.of(context)
+                              .product_details_screen_seller_policy,
+                        );
                       }));
                     }),
                 is_logged_in.$ == true
