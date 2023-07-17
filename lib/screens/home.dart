@@ -2669,42 +2669,42 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Filter(
-                selected_filter: "sellers",
-              );
-            }));
-          },
-          child: Container(
-            height: 100,
-            width: MediaQuery.of(context).size.width / 5 - 4,
-            child: Column(
-              children: [
-                Container(
-                    height: 47,
-                    width: 47,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border:
-                            Border.all(color: MyTheme.light_grey, width: 1)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Image.asset("assets/todays_deal.png"),
-                    )),
-                Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Text(
-                        AppLocalizations.of(context).home_screen_all_sellers,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromRGBO(132, 132, 132, 1),
-                            fontWeight: FontWeight.w300))),
-              ],
-            ),
-          ),
-        ),
+        // GestureDetector(
+        //   onTap: () {
+        //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+        //       return Filter(
+        //         selected_filter: "sellers",
+        //       );
+        //     }));
+        //   },
+        //   child: Container(
+        //     height: 100,
+        //     width: MediaQuery.of(context).size.width / 5 - 4,
+        //     child: Column(
+        //       children: [
+        //         Container(
+        //             height: 47,
+        //             width: 47,
+        //             decoration: BoxDecoration(
+        //                 shape: BoxShape.circle,
+        //                 border:
+        //                     Border.all(color: MyTheme.light_grey, width: 1)),
+        //             child: Padding(
+        //               padding: const EdgeInsets.all(16.0),
+        //               child: Image.asset("assets/todays_deal.png"),
+        //             )),
+        //         Padding(
+        //             padding: const EdgeInsets.only(top: 8),
+        //             child: Text(
+        //                 AppLocalizations.of(context).home_screen_all_sellers,
+        //                 textAlign: TextAlign.center,
+        //                 style: TextStyle(
+        //                     color: Color.fromRGBO(132, 132, 132, 1),
+        //                     fontWeight: FontWeight.w300))),
+        //       ],
+        //     ),
+        //   ),
+        // ),
         GestureDetector(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
