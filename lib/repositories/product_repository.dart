@@ -23,7 +23,7 @@ class ProductRepository {
   --------
   --------*/
   Future<ProductMiniResponse> getAuctionProducts({page = 1}) async {
-    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/auction");
+    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/auction?page=${page}");
     final response = await http.get(url, headers: {
       "App-Language": app_language.$,
     });
@@ -31,7 +31,24 @@ class ProductRepository {
   }
 
   Future<ProductMiniResponse> getBuytowinProducts({page = 1}) async {
-    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/buytowin");
+    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/buytowin?page=${page}");
+    final response = await http.get(url, headers: {
+      "App-Language": app_language.$,
+    });
+    return productMiniResponseFromJson(response.body);
+  }
+
+  Future<ProductMiniResponse> getAuction1Products({page = 1}) async {
+    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/auction1?page=${page}");
+    final response = await http.get(url, headers: {
+      "App-Language": app_language.$,
+    });
+    return productMiniResponseFromJson(response.body);
+  }
+
+  Future<ProductMiniResponse> getBuytowin1Products({page = 1}) async {
+    Uri url =
+        Uri.parse("${AppConfig.BASE_URL}/products/buytowin1?page=${page}");
     final response = await http.get(url, headers: {
       "App-Language": app_language.$,
     });
