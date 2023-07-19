@@ -2600,7 +2600,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     )
                   : SizedBox(),
-
               widget.buyToWinProducts == true && buyTowinStatus == false
                   ? SizedBox()
                   : Expanded(
@@ -2631,7 +2630,6 @@ class _ProductDetailsState extends State<ProductDetails> {
               SizedBox(
                 width: 1,
               ),
-
               widget.buyToWinProducts == true && voucherDateStatus == false
                   ? SizedBox()
                   : Expanded(
@@ -2662,15 +2660,14 @@ class _ProductDetailsState extends State<ProductDetails> {
               SizedBox(
                 width: 1,
               ),
-
-              // normalProduct == true ||
-              //         (widget.buyToWinProducts == true &&
-              //             buyTowinStatus == false) ||
-              //         (widget.buyToWinProducts == true &&
-              //             voucherDateStatus == false) ||
-              (normalProduct == true &&
-                      widget.buyToWinProducts == false &&
-                      isAuction == false)
+              normalProduct == true ||
+                      (widget.buyToWinProducts == true &&
+                          buyTowinStatus == false) ||
+                      (widget.buyToWinProducts == true &&
+                          voucherDateStatus == false) ||
+                      (normalProduct == true &&
+                          widget.buyToWinProducts == false &&
+                          isAuction == false)
                   // (widget.buyToWinProducts == false && isAuction == false) || raffelStatus == false
 
                   // isAuction == true ||
