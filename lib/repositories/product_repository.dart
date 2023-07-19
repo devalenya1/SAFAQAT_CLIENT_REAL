@@ -38,30 +38,30 @@ class ProductRepository {
     return productMiniResponseFromJson(response.body);
   }
 
-  Future<ProductMiniResponse> getAuction1Products({page = 1}) async {
-    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/auction1?page=${page}");
-    final response = await http.get(url, headers: {
-      "App-Language": app_language.$,
-    });
-    return productMiniResponseFromJson(response.body);
-  }
+  // Future<ProductMiniResponse> getAuction1Products({page = 1}) async {
+  //   Uri url = Uri.parse("${AppConfig.BASE_URL}/products/auction1?page=${page}");
+  //   final response = await http.get(url, headers: {
+  //     "App-Language": app_language.$,
+  //   });
+  //   return productMiniResponseFromJson(response.body);
+  // }
 
-  Future<ProductMiniResponse> getBuytowin1Products({page = 1}) async {
-    Uri url =
-        Uri.parse("${AppConfig.BASE_URL}/products/buytowin1?page=${page}");
-    final response = await http.get(url, headers: {
-      "App-Language": app_language.$,
-    });
-    return productMiniResponseFromJson(response.body);
-  }
+  // Future<ProductMiniResponse> getBuytowin1Products({page = 1}) async {
+  //   Uri url =
+  //       Uri.parse("${AppConfig.BASE_URL}/products/buytowin1?page=${page}");
+  //   final response = await http.get(url, headers: {
+  //     "App-Language": app_language.$,
+  //   });
+  //   return productMiniResponseFromJson(response.body);
+  // }
 
-  Future<ProductMiniResponse> getVoucherProducts({page = 1}) async {
-    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/voucher");
-    final response = await http.get(url, headers: {
-      "App-Language": app_language.$,
-    });
-    return productMiniResponseFromJson(response.body);
-  }
+  // Future<ProductMiniResponse> getVoucherProducts({page = 1}) async {
+  //   Uri url = Uri.parse("${AppConfig.BASE_URL}/products/voucher");
+  //   final response = await http.get(url, headers: {
+  //     "App-Language": app_language.$,
+  //   });
+  //   return productMiniResponseFromJson(response.body);
+  // }
 
   Future<ProductMiniResponse> getAllProducts({page = 1}) async {
     Uri url = Uri.parse("${AppConfig.BASE_URL}/products/");
