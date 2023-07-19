@@ -89,11 +89,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   ScrollController _featuredProductScrollController;
   ScrollController _auctionProductScrollController;
   ScrollController _buytowinProductScrollController;
-  ScrollController _voucherProductScrollController;
+  // ScrollController _voucherProductScrollController;
   ScrollController _applianceProductScrollController;
   //Homeappliance
   ScrollController _allProductScrollController;
-  ScrollController _raffelProductScrollController;
+  // ScrollController _raffelProductScrollController;
   ScrollController _toysProductScrollController;
   ScrollController _toolsProductScrollController;
   ScrollController _phoneProductScrollController;
@@ -117,9 +117,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   var _featuredProductList = [];
   var _auctionProductList = [];
   var _buytowinProductList = [];
-  var _voucherProductList = [];
+  // var _voucherProductList = [];
   var _allProductList = [];
-  var _raffelProductList = [];
+  // var _raffelProductList = [];
   var _toysProductList = [];
   var _phoneProductList = [];
   var _babyProductList = [];
@@ -177,9 +177,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     fetchFeaturedProducts();
     fetchAuctionProducts();
     fetchBuytowinProducts();
-    fetchVoucherProducts();
+    // fetchVoucherProducts();
     fetchAllProducts();
-    fetchRaffelProducts();
+    // fetchRaffelProducts();
     fetchToysProducts();
     fetchToolsProducts();
     fetchPhoneProducts();
@@ -257,17 +257,17 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     setState(() {});
   }
 
-  fetchVoucherProducts() async {
-    var productResponse = await ProductRepository().getVoucherProducts(
-      page: _productPage,
-    );
+  // fetchVoucherProducts() async {
+  //   var productResponse = await ProductRepository().getVoucherProducts(
+  //     page: _productPage,
+  //   );
 
-    _voucherProductList.addAll(productResponse.products);
-    _isProductInitial = false;
-    _totalProductData = productResponse.meta.total;
-    _showProductLoadingContainer = false;
-    setState(() {});
-  }
+  //   _voucherProductList.addAll(productResponse.products);
+  //   _isProductInitial = false;
+  //   _totalProductData = productResponse.meta.total;
+  //   _showProductLoadingContainer = false;
+  //   setState(() {});
+  // }
 
   fetchAllProducts() async {
     var productResponse = await ProductRepository().getAllProducts(
@@ -281,17 +281,17 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     setState(() {});
   }
 
-  fetchRaffelProducts() async {
-    var productResponse = await ProductRepository().getRaffelProducts(
-      page: _productPage,
-    );
+  // fetchRaffelProducts() async {
+  //   var productResponse = await ProductRepository().getRaffelProducts(
+  //     page: _productPage,
+  //   );
 
-    _raffelProductList.addAll(productResponse.products);
-    _isProductInitial = false;
-    _totalProductData = productResponse.meta.total;
-    _showProductLoadingContainer = false;
-    setState(() {});
-  }
+  //   _raffelProductList.addAll(productResponse.products);
+  //   _isProductInitial = false;
+  //   _totalProductData = productResponse.meta.total;
+  //   _showProductLoadingContainer = false;
+  //   setState(() {});
+  // }
 
   fetchToysProducts() async {
     var productResponse = await ProductRepository().getToysProducts(
@@ -487,8 +487,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     _auctionProductList.clear();
     _allProductList.clear();
     _buytowinProductList.clear();
-    _voucherProductList.clear();
-    _raffelProductList.clear();
+    // _voucherProductList.clear();
+    // _raffelProductList.clear();
     _toysProductList.clear();
     _toolsProductList.clear();
     _applianceProductList.clear();
@@ -969,7 +969,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                                           _buytowinProductList[
                                                                   index]
                                                               .stroked_price,
-                                                      // isAuction: true,
+                                                      // isAuction: false,
                                                       buyToWinProducts: true,
                                                       productDetails:
                                                           snapshot.data,
@@ -1754,49 +1754,49 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     );
   }
 
-  buildHomeAuctionProducts(context) async {
-    if (_isProductInitial && _auctionProductList.length == 0) {
-      return SingleChildScrollView(
-          child: ShimmerHelper().buildProductGridShimmer(
-              scontroller: _auctionProductScrollController));
-    } else if (_auctionProductList.length > 0) {
-      //snapshot.hasData
+  // buildHomeAuctionProducts(context) async {
+  //   if (_isProductInitial && _auctionProductList.length == 0) {
+  //     return SingleChildScrollView(
+  //         child: ShimmerHelper().buildProductGridShimmer(
+  //             scontroller: _auctionProductScrollController));
+  //   } else if (_auctionProductList.length > 0) {
+  //     //snapshot.hasData
 
-      return GridView.builder(
-        // 2
-        //addAutomaticKeepAlives: true,
-        itemCount: _auctionProductList.length,
-        controller: _auctionProductScrollController,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 0.518),
-        padding: EdgeInsets.all(8),
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          // 3
-          // _auctionProductList[index].
+  //     return GridView.builder(
+  //       // 2
+  //       //addAutomaticKeepAlives: true,
+  //       itemCount: _auctionProductList.length,
+  //       controller: _auctionProductScrollController,
+  //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+  //           crossAxisCount: 2,
+  //           crossAxisSpacing: 10,
+  //           mainAxisSpacing: 10,
+  //           childAspectRatio: 0.518),
+  //       padding: EdgeInsets.all(8),
+  //       physics: NeverScrollableScrollPhysics(),
+  //       shrinkWrap: true,
+  //       itemBuilder: (context, index) {
+  //         // 3
+  //         // _auctionProductList[index].
 
-          return ProductCard(
-              id: _auctionProductList[index].id,
-              image: _auctionProductList[index].thumbnail_image,
-              name: _auctionProductList[index].name,
-              main_price: _auctionProductList[index].main_price,
-              stroked_price: _auctionProductList[index].stroked_price,
-              isAuction: true,
-              has_discount: _auctionProductList[index].has_discount);
-        },
-      );
-    } else if (_totalProductData == 0) {
-      return Center(
-          child: Text(
-              AppLocalizations.of(context).common_no_product_is_available));
-    } else {
-      return Container(); // should never be happening
-    }
-  }
+  //         return ProductCard(
+  //             id: _auctionProductList[index].id,
+  //             image: _auctionProductList[index].thumbnail_image,
+  //             name: _auctionProductList[index].name,
+  //             main_price: _auctionProductList[index].main_price,
+  //             stroked_price: _auctionProductList[index].stroked_price,
+  //             isAuction: true,
+  //             has_discount: _auctionProductList[index].has_discount);
+  //       },
+  //     );
+  //   } else if (_totalProductData == 0) {
+  //     return Center(
+  //         child: Text(
+  //             AppLocalizations.of(context).common_no_product_is_available));
+  //   } else {
+  //     return Container(); // should never be happening
+  //   }
+  // }
 
   Future<DetailedProduct> getAuctionProductFuture(id) async {
     log("Start working");
@@ -1808,48 +1808,48 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     return productDetails;
   }
 
-  buildHomeRaffelProducts(context) {
-    if (_isProductInitial && _buytowinProductList.length == 0) {
-      return SingleChildScrollView(
-          child: ShimmerHelper().buildProductGridShimmer(
-              scontroller: _buytowinProductScrollController));
-    } else if (_buytowinProductList.length > 0) {
-      //snapshot.hasData
+  // buildHomeRaffelProducts(context) {
+  //   if (_isProductInitial && _buytowinProductList.length == 0) {
+  //     return SingleChildScrollView(
+  //         child: ShimmerHelper().buildProductGridShimmer(
+  //             scontroller: _buytowinProductScrollController));
+  //   } else if (_buytowinProductList.length > 0) {
+  //     //snapshot.hasData
 
-      return GridView.builder(
-        // 2
-        //addAutomaticKeepAlives: true,
-        itemCount: _buytowinProductList.length,
-        //controller: _raffelProductScrollController,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 0.518),
-        padding: EdgeInsets.all(8),
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemBuilder: (context, index) {
-          // 3
-          return ProductCard(
-              id: _buytowinProductList[index].id,
-              image: _buytowinProductList[index].thumbnail_image,
-              name: _buytowinProductList[index].name,
-              main_price: _buytowinProductList[index].main_price,
-              stroked_price: _buytowinProductList[index].stroked_price,
-              buyToWinProducts: true,
-              isAuction: false,
-              has_discount: _buytowinProductList[index].has_discount);
-        },
-      );
-    } else if (_totalProductData == 0) {
-      return Center(
-          child: Text(
-              AppLocalizations.of(context).common_no_product_is_available));
-    } else {
-      return Container(); // should never be happening
-    }
-  }
+  //     return GridView.builder(
+  //       // 2
+  //       //addAutomaticKeepAlives: true,
+  //       itemCount: _buytowinProductList.length,
+  //       //controller: _raffelProductScrollController,
+  //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+  //           crossAxisCount: 2,
+  //           crossAxisSpacing: 10,
+  //           mainAxisSpacing: 10,
+  //           childAspectRatio: 0.518),
+  //       padding: EdgeInsets.all(8),
+  //       physics: NeverScrollableScrollPhysics(),
+  //       shrinkWrap: true,
+  //       itemBuilder: (context, index) {
+  //         // 3
+  //         return ProductCard(
+  //             id: _buytowinProductList[index].id,
+  //             image: _buytowinProductList[index].thumbnail_image,
+  //             name: _buytowinProductList[index].name,
+  //             main_price: _buytowinProductList[index].main_price,
+  //             stroked_price: _buytowinProductList[index].stroked_price,
+  //             buyToWinProducts: true,
+  //             isAuction: false,
+  //             has_discount: _buytowinProductList[index].has_discount);
+  //       },
+  //     );
+  //   } else if (_totalProductData == 0) {
+  //     return Center(
+  //         child: Text(
+  //             AppLocalizations.of(context).common_no_product_is_available));
+  //   } else {
+  //     return Container(); // should never be happening
+  //   }
+  // }
 
   buildHomeToysProducts(context) {
     if (_isProductInitial && _toysProductList.length == 0) {
@@ -3535,368 +3535,9 @@ class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
   }
 }
 
-// class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
-//   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-//   ScrollController _raffelProductScrollController;
-//   ScrollController _mainScrollController = ScrollController();
 
-//   AnimationController pirated_logo_controller;
-//   Animation pirated_logo_animation;
 
-//   var _raffelProductList = [];
-//   bool _isProductInitial = true;
-//   int _totalProductData = 0;
-//   int _productPage = 1;
-//   bool _showProductLoadingContainer = false;
 
-//   @override
-//   void initState() {
-//     super.initState();
-//     if (AppConfig.purchase_code == "") {
-//       initPiratedAnimation();
-//     }
-
-//     fetchAll();
-
-//     _mainScrollController.addListener(() {
-//       if (_mainScrollController.position.pixels ==
-//           _mainScrollController.position.maxScrollExtent) {
-//         setState(() {
-//           _productPage++;
-//         });
-//         _showProductLoadingContainer = true;
-//         fetchRaffelProducts();
-//       }
-//     });
-//   }
-
-//   fetchAll() {
-//     fetchRaffelProducts();
-//   }
-
-//   fetchRaffelProducts() async {
-//     var productResponse = await ProductRepository().getRaffelProducts(
-//       page: _productPage,
-//     );
-
-//     _raffelProductList.addAll(productResponse.products);
-//     _isProductInitial = false;
-//     _totalProductData = productResponse.meta.total;
-//     _showProductLoadingContainer = false;
-//     setState(() {});
-//   }
-
-//   reset() {
-//     setState(() {});
-
-//     resetProductList();
-//   }
-
-//   Future<void> _onRefresh() async {
-//     reset();
-//     fetchAll();
-//   }
-
-//   resetProductList() {
-//     _raffelProductList.clear();
-//     _isProductInitial = true;
-//     _totalProductData = 0;
-//     _productPage = 1;
-//     _showProductLoadingContainer = false;
-//     setState(() {});
-//   }
-
-//   initPiratedAnimation() {
-//     pirated_logo_controller = AnimationController(
-//         vsync: this, duration: Duration(milliseconds: 2000));
-//     pirated_logo_animation = Tween(begin: 40.0, end: 60.0).animate(
-//         CurvedAnimation(
-//             curve: Curves.bounceOut, parent: pirated_logo_controller));
-
-//     pirated_logo_controller.addStatusListener((AnimationStatus status) {
-//       if (status == AnimationStatus.completed) {
-//         pirated_logo_controller.repeat();
-//       }
-//     });
-
-//     pirated_logo_controller.forward();
-//   }
-
-//   @override
-//   void dispose() {
-//     super.dispose();
-//     pirated_logo_controller?.dispose();
-//     _mainScrollController.dispose();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final double statusBarHeight = MediaQuery.of(context).padding.top;
-//     //print(MediaQuery.of(context).viewPadding.top);
-
-//     return WillPopScope(
-//       onWillPop: () async {
-//         //CommonFunctions(context).appExitDialog();
-//         return widget.show_back_button;
-//       },
-//       child: Directionality(
-//         textDirection:
-//             app_language_rtl.$ ? TextDirection.rtl : TextDirection.ltr,
-//         child: Scaffold(
-//             key: _scaffoldKey,
-//             backgroundColor: Colors.white,
-//             appBar: buildAppBar(statusBarHeight, context),
-//             drawer: MainDrawer(),
-//             body: Stack(
-//               children: [
-//                 RefreshIndicator(
-//                   color: MyTheme.accent_color,
-//                   backgroundColor: Colors.white,
-//                   onRefresh: _onRefresh,
-//                   displacement: 0,
-//                   child: CustomScrollView(
-//                     controller: _mainScrollController,
-//                     physics: const BouncingScrollPhysics(
-//                         parent: AlwaysScrollableScrollPhysics()),
-//                     slivers: <Widget>[
-//                       SliverList(
-//                         delegate: SliverChildListDelegate([
-//                           Padding(
-//                             padding: const EdgeInsets.fromLTRB(
-//                               16.0,
-//                               16.0,
-//                               16.0,
-//                               0.0,
-//                             ),
-//                             child: Column(
-//                               crossAxisAlignment: CrossAxisAlignment.start,
-//                               children: [
-//                                 Text(
-//                                   "BUY AND WIN PRODUCTS",
-//                                   style: TextStyle(fontSize: 16),
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           SingleChildScrollView(
-//                             child: Column(
-//                               children: [
-//                                 Padding(
-//                                   padding: const EdgeInsets.fromLTRB(
-//                                     4.0,
-//                                     16.0,
-//                                     8.0,
-//                                     0.0,
-//                                   ),
-//                                   child: SingleChildScrollView(
-//                                     child: Padding(
-//                                       padding: const EdgeInsets.fromLTRB(
-//                                           4.0, 16.0, 8.0, 0.0),
-//                                       child: Column(
-//                                         children: [
-//                                           GridView.builder(
-//                                             itemCount:
-//                                                 _raffelProductList.length,
-//                                             controller:
-//                                                 _raffelProductScrollController,
-//                                             gridDelegate:
-//                                                 SliverGridDelegateWithFixedCrossAxisCount(
-//                                                     crossAxisCount: 2,
-//                                                     crossAxisSpacing: 10,
-//                                                     mainAxisSpacing: 10,
-//                                                     // childAspectRatio: 0.518,
-//                                                     childAspectRatio: 2 / 4.5
-//                                                     // childAspectRatio: 0.7,
-//                                                     ),
-//                                             padding: EdgeInsets.all(8),
-//                                             physics:
-//                                                 NeverScrollableScrollPhysics(),
-//                                             shrinkWrap: true,
-//                                             itemBuilder: (context, index) {
-//                                               return FutureBuilder<
-//                                                   DetailedProduct>(
-//                                                 future: getRaffelProductFuture(
-//                                                     _raffelProductList[index]
-//                                                         .id),
-//                                                 // initialData: initialData,
-//                                                 builder: (BuildContext context,
-//                                                     AsyncSnapshot snapshot) {
-//                                                   if (snapshot
-//                                                           .connectionState ==
-//                                                       ConnectionState.waiting)
-//                                                     return Container(
-//                                                       width: 30,
-//                                                       height: 30,
-//                                                       child: FittedBox(
-//                                                         fit: BoxFit.scaleDown,
-//                                                         child:
-//                                                             CircularProgressIndicator(
-//                                                           color: MyTheme
-//                                                               .accent_color,
-//                                                         ),
-//                                                       ),
-//                                                     );
-
-//                                                   // return Container(
-//                                                   //   child: Text(snapshot.data.toString()),
-//                                                   return ProductCard(
-//                                                       id: _raffelProductList[
-//                                                               index]
-//                                                           .id,
-//                                                       image: _raffelProductList[
-//                                                               index]
-//                                                           .thumbnail_image,
-//                                                       name: _raffelProductList[
-//                                                               index]
-//                                                           .name,
-//                                                       main_price:
-//                                                           _raffelProductList[
-//                                                                   index]
-//                                                               .main_price,
-//                                                       stroked_price:
-//                                                           _raffelProductList[
-//                                                                   index]
-//                                                               .stroked_price,
-//                                                       // isAuction: true,
-//                                                       buyToWinProducts: true,
-//                                                       productDetails:
-//                                                           snapshot.data,
-//                                                       has_discount:
-//                                                           _raffelProductList[
-//                                                                   index]
-//                                                               .has_discount);
-//                                                 },
-//                                               );
-//                                             },
-//                                           )
-//                                         ],
-//                                       ),
-//                                     ),
-//                                   ),
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           Container(
-//                             height: 80,
-//                           )
-//                         ]),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//                 Align(
-//                     alignment: Alignment.center,
-//                     child: buildProductLoadingContainer())
-//               ],
-//             )),
-//       ),
-//     );
-//   }
-
-//   buildHomeRaffelProducts(context) {
-//     if (_isProductInitial && _raffelProductList.length == 0) {
-//       return SingleChildScrollView(
-//           child: ShimmerHelper().buildProductGridShimmer(
-//               scontroller: _raffelProductScrollController));
-//     } else if (_raffelProductList.length > 0) {
-//       //snapshot.hasData
-
-//       return GridView.builder(
-//         // 2
-//         //addAutomaticKeepAlives: true,
-//         itemCount: _raffelProductList.length,
-//         //controller: _raffelProductScrollController,
-//         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//             crossAxisCount: 2,
-//             crossAxisSpacing: 10,
-//             mainAxisSpacing: 10,
-//             childAspectRatio: 0.518),
-//         padding: EdgeInsets.all(8),
-//         physics: NeverScrollableScrollPhysics(),
-//         shrinkWrap: true,
-//         itemBuilder: (context, index) {
-//           // 3
-//           return ProductCard(
-//               id: _raffelProductList[index].id,
-//               image: _raffelProductList[index].thumbnail_image,
-//               name: _raffelProductList[index].name,
-//               main_price: _raffelProductList[index].main_price,
-//               stroked_price: _raffelProductList[index].stroked_price,
-//               buyToWinProducts: true,
-//               isAuction: false,
-//               has_discount: _raffelProductList[index].has_discount);
-//         },
-//       );
-//     } else if (_totalProductData == 0) {
-//       return Center(
-//           child: Text(
-//               AppLocalizations.of(context).common_no_product_is_available));
-//     } else {
-//       return Container(); // should never be happening
-//     }
-//   }
-
-//   Future<DetailedProduct> getRaffelProductFuture(id) async {
-//     log("Start working");
-
-//     var productDetailsResponse =
-//         await ProductRepository().getProductDetails(id: id);
-//     var productDetails = productDetailsResponse.detailed_products[0];
-//     log(productDetailsResponse.toString());
-//     return productDetails;
-//   }
-
-//   AppBar buildAppBar(double statusBarHeight, BuildContext context) {}
-
-//   buildHomeSearchBox(BuildContext context) {
-//     return TextField(
-//       onTap: () {
-//         Navigator.push(context, MaterialPageRoute(builder: (context) {
-//           return Filter();
-//         }));
-//       },
-//       autofocus: false,
-//       decoration: InputDecoration(
-//           hintText: AppLocalizations.of(context).home_screen_search,
-//           hintStyle: TextStyle(fontSize: 12.0, color: MyTheme.textfield_grey),
-//           enabledBorder: OutlineInputBorder(
-//             borderSide: BorderSide(color: MyTheme.textfield_grey, width: 0.5),
-//             borderRadius: const BorderRadius.all(
-//               const Radius.circular(16.0),
-//             ),
-//           ),
-//           focusedBorder: OutlineInputBorder(
-//             borderSide: BorderSide(color: MyTheme.textfield_grey, width: 1.0),
-//             borderRadius: const BorderRadius.all(
-//               const Radius.circular(16.0),
-//             ),
-//           ),
-//           prefixIcon: Padding(
-//             padding: const EdgeInsets.all(8.0),
-//             child: Icon(
-//               Icons.search,
-//               color: MyTheme.textfield_grey,
-//               size: 20,
-//             ),
-//           ),
-//           contentPadding: EdgeInsets.all(0.0)),
-//     );
-//   }
-
-//   Container buildProductLoadingContainer() {
-//     return Container(
-//       height: _showProductLoadingContainer ? 36 : 0,
-//       width: double.infinity,
-//       color: Colors.white,
-//       child: Center(
-//         child: Text(_totalProductData == _raffelProductList.length
-//             ? AppLocalizations.of(context).common_no_more_products
-//             : AppLocalizations.of(context).common_loading_more_products),
-//       ),
-//     );
-//   }
-// }
 
 class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -3938,7 +3579,7 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
   }
 
   fetchBuytowinProducts() async {
-    var productResponse = await ProductRepository().getFeaturedProducts(
+    var productResponse = await ProductRepository().getBuytowinProducts(
       page: _productPage,
     );
 
@@ -4035,7 +3676,7 @@ class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "BUY AND WIN PRODUCTS",
+                                  "  ",
                                   style: TextStyle(fontSize: 16),
                                 ),
                               ],
