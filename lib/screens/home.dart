@@ -3497,6 +3497,7 @@ class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
               main_price: _featuredProductList[index].main_price,
               isAuction: false,
               stroked_price: _featuredProductList[index].stroked_price,
+              buyToWinProducts: false,
               // isAuction: false,
 
               has_discount: _featuredProductList[index].has_discount);

@@ -2429,14 +2429,6 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: [
               isAuction == true && auctionStatus == false
                   ? Expanded(
-                      // child: FlatButton(
-                      //   minWidth: MediaQuery.of(context).size.width / 2 - .5,
-                      //   height: 50,
-                      //   color: MyTheme.golden,
-                      //   disabledColor: Colors.grey,
-                      //   shape: RoundedRectangleBorder(
-                      //     borderRadius: BorderRadius.circular(0.0),
-                      //   ),
                       child: TextButton(
                         style: TextButton.styleFrom(
                           minimumSize: Size(
@@ -2608,17 +2600,79 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     )
                   : SizedBox(),
-              normalProduct == true ||
-                      (widget.buyToWinProducts == true &&
-                          buyTowinStatus == false) ||
-                      (widget.buyToWinProducts == true &&
-                          voucherDateStatus == false) ||
-                      (normalProduct == true &&
-                          widget.buyToWinProducts == false &&
-                          isAuction == false) ||
-                      (widget.buyToWinProducts == false &&
-                          isAuction == false) ||
-                      raffelStatus == false
+
+              widget.buyToWinProducts == true && buyTowinStatus == false
+                  ? SizedBox()
+                  : Expanded(
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 2 - .5, 50),
+                          backgroundColor: MyTheme.golden,
+                          padding: EdgeInsets.all(0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                          ),
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)
+                              .product_details_screen_button_add_to_cart,
+                          // 'Let see',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        onPressed: () {
+                          onPressAddToCart(context, _addedToCartSnackbar);
+                        },
+                      ),
+                    ),
+              SizedBox(
+                width: 1,
+              ),
+
+              widget.buyToWinProducts == true && voucherDateStatus == false
+                  ? SizedBox()
+                  : Expanded(
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 2 - .5, 50),
+                          backgroundColor: MyTheme.golden,
+                          padding: EdgeInsets.all(0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                          ),
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)
+                              .product_details_screen_button_add_to_cart,
+                          // 'Let see',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        onPressed: () {
+                          onPressAddToCart(context, _addedToCartSnackbar);
+                        },
+                      ),
+                    ),
+              SizedBox(
+                width: 1,
+              ),
+
+              // normalProduct == true ||
+              //         (widget.buyToWinProducts == true &&
+              //             buyTowinStatus == false) ||
+              //         (widget.buyToWinProducts == true &&
+              //             voucherDateStatus == false) ||
+              (normalProduct == true &&
+                      widget.buyToWinProducts == false &&
+                      isAuction == false)
+                  // (widget.buyToWinProducts == false && isAuction == false) || raffelStatus == false
+
                   // isAuction == true ||
                   //         normalProduct == false ||
                   //         (widget.buyToWinProducts == true &&
@@ -2890,7 +2944,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                   name: _topProducts[index].name,
                   main_price: _topProducts[index].main_price,
                   stroked_price: _topProducts[index].stroked_price,
-                  has_discount: _topProducts[index].has_discount),
+                  has_discount: _topProducts[index].has_discount,
+                  isAuction: false,
+                  buyToWinProducts: widget.buyToWinProducts),
             );
           },
         ),
