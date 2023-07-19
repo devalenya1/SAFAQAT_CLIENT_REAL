@@ -2600,81 +2600,42 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     )
                   : SizedBox(),
-              widget.buyToWinProducts == true && buyTowinStatus == false
-                  ? SizedBox()
-                  : Expanded(
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          minimumSize: Size(
-                              MediaQuery.of(context).size.width / 2 - .5, 50),
-                          backgroundColor: MyTheme.golden,
-                          padding: EdgeInsets.all(0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0.0),
-                          ),
-                        ),
-                        child: Text(
-                          AppLocalizations.of(context)
-                              .product_details_screen_button_add_to_cart,
-                          // 'Let see',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        onPressed: () {
-                          onPressAddToCart(context, _addedToCartSnackbar);
-                        },
-                      ),
-                    ),
-              SizedBox(
-                width: 1,
-              ),
-              widget.buyToWinProducts == true && voucherDateStatus == false
-                  ? SizedBox()
-                  : Expanded(
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          minimumSize: Size(
-                              MediaQuery.of(context).size.width / 2 - .5, 50),
-                          backgroundColor: MyTheme.golden,
-                          padding: EdgeInsets.all(0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0.0),
-                          ),
-                        ),
-                        child: Text(
-                          AppLocalizations.of(context)
-                              .product_details_screen_button_add_to_cart,
-                          // 'Let see',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
-                        ),
-                        onPressed: () {
-                          onPressAddToCart(context, _addedToCartSnackbar);
-                        },
-                      ),
-                    ),
-              SizedBox(
-                width: 1,
-              ),
-              normalProduct == true ||
-                      (widget.buyToWinProducts == true &&
-                          buyTowinStatus == false) ||
+              // widget.buyToWinProducts == true && buyTowinStatus == false
+              //     ? SizedBox()
+              //     : Expanded(
+              //         child: TextButton(
+              //           style: TextButton.styleFrom(
+              //             minimumSize: Size(
+              //                 MediaQuery.of(context).size.width / 2 - .5, 50),
+              //             backgroundColor: MyTheme.golden,
+              //             padding: EdgeInsets.all(0),
+              //             shape: RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(0.0),
+              //             ),
+              //           ),
+              //           child: Text(
+              //             AppLocalizations.of(context)
+              //                 .product_details_screen_button_add_to_cart,
+              //             // 'Let see',
+              //             style: TextStyle(
+              //                 color: Colors.white,
+              //                 fontSize: 16,
+              //                 fontWeight: FontWeight.w600),
+              //           ),
+              //           onPressed: () {
+              //             onPressAddToCart(context, _addedToCartSnackbar);
+              //           },
+              //         ),
+              //       ),
+              // SizedBox(
+              //   width: 1,
+              // ),
+              (widget.buyToWinProducts == true && buyTowinStatus == false) ||
                       (widget.buyToWinProducts == true &&
                           voucherDateStatus == false) ||
                       (normalProduct == true &&
                           widget.buyToWinProducts == false &&
                           isAuction == false)
-                  // (widget.buyToWinProducts == false && isAuction == false) || raffelStatus == false
-
-                  // isAuction == true ||
-                  //         normalProduct == false ||
-                  //         (widget.buyToWinProducts == true &&
-                  //             buyTowinStatus == true) ||
-                  //         raffelStatus == true
                   ? SizedBox()
                   : Expanded(
                       child: TextButton(
@@ -2704,6 +2665,51 @@ class _ProductDetailsState extends State<ProductDetails> {
               SizedBox(
                 width: 1,
               ),
+              // normalProduct == true ||
+              //         (widget.buyToWinProducts == true &&
+              //             buyTowinStatus == false) ||
+              //         (widget.buyToWinProducts == true &&
+              //             voucherDateStatus == false) ||
+              //         (normalProduct == true &&
+              //             widget.buyToWinProducts == false &&
+              //             isAuction == false)
+              //     // (widget.buyToWinProducts == false && isAuction == false) || raffelStatus == false
+
+              //     // isAuction == true ||
+              //     //         normalProduct == false ||
+              //     //         (widget.buyToWinProducts == true &&
+              //     //             buyTowinStatus == true) ||
+              //     //         raffelStatus == true
+              //     ? SizedBox()
+              //     : Expanded(
+              //         child: TextButton(
+              //           style: TextButton.styleFrom(
+              //             minimumSize: Size(
+              //                 MediaQuery.of(context).size.width / 2 - .5, 50),
+              //             backgroundColor: MyTheme.golden,
+              //             padding: EdgeInsets.all(0),
+              //             shape: RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(0.0),
+              //             ),
+              //           ),
+              //           child: Text(
+              //             AppLocalizations.of(context)
+              //                 .product_details_screen_button_add_to_cart,
+              //             // 'Let see',
+              //             style: TextStyle(
+              //                 color: Colors.white,
+              //                 fontSize: 16,
+              //                 fontWeight: FontWeight.w600),
+              //           ),
+              //           onPressed: () {
+              //             onPressAddToCart(context, _addedToCartSnackbar);
+              //           },
+              //         ),
+              //       ),
+              // SizedBox(
+              //   width: 1,
+              // ),
+
               (isAuction == true && auctionStatus == false) ||
                       (widget.buyToWinProducts == true &&
                           buyTowinStatus == false) ||
