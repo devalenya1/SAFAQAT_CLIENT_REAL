@@ -136,8 +136,8 @@ class _MainDrawerState extends State<MainDrawer> {
                           MaterialPageRoute(builder: (context) {
                         return CommonWebviewScreen(
                           url: "${AppConfig.RAW_BASE_URL}/app-order",
-                          page_name: AppLocalizations.of(context)
-                              .product_details_screen_seller_policy,
+                          // page_name: AppLocalizations.of(context)
+                          //     .product_details_screen_seller_policy,
                         );
                       }));
                     }),
@@ -154,8 +154,8 @@ class _MainDrawerState extends State<MainDrawer> {
                           MaterialPageRoute(builder: (context) {
                         return CommonWebviewScreen(
                           url: "${AppConfig.RAW_BASE_URL}/app-balance",
-                          page_name: AppLocalizations.of(context)
-                              .product_details_screen_seller_policy,
+                          // page_name: AppLocalizations.of(context)
+                          //     .product_details_screen_seller_policy,
                         );
                       }));
                     }),
