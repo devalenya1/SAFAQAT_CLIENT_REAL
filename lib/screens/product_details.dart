@@ -2633,9 +2633,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               (widget.buyToWinProducts == true && buyTowinStatus == false) ||
                       (widget.buyToWinProducts == true &&
                           voucherDateStatus == false) ||
-                      (normalProduct == true &&
-                          widget.buyToWinProducts == false &&
-                          isAuction == false)
+                      normalProduct == true
                   ? SizedBox()
                   : Expanded(
                       child: TextButton(
