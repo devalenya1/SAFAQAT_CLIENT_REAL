@@ -969,7 +969,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                                           _buytowinProductList[
                                                                   index]
                                                               .stroked_price,
-                                                      // isAuction: false,
+                                                      isAuction: false,
                                                       buyToWinProducts: true,
                                                       productDetails:
                                                           snapshot.data,
@@ -1880,6 +1880,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _toysProductList[index].name,
               main_price: _toysProductList[index].main_price,
               stroked_price: _toysProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _toysProductList[index].has_discount);
         },
       );
@@ -1921,6 +1923,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _toolsProductList[index].name,
               main_price: _toolsProductList[index].main_price,
               stroked_price: _toolsProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _toolsProductList[index].has_discount);
         },
       );
@@ -1962,6 +1966,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _clothesProductList[index].name,
               main_price: _clothesProductList[index].main_price,
               stroked_price: _clothesProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _clothesProductList[index].has_discount);
         },
       );
@@ -2003,6 +2009,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _allProductList[index].name,
               main_price: _allProductList[index].main_price,
               stroked_price: _allProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _allProductList[index].has_discount);
         },
       );
@@ -2044,6 +2052,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _applianceProductList[index].name,
               main_price: _applianceProductList[index].main_price,
               stroked_price: _applianceProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _applianceProductList[index].has_discount);
         },
       );
@@ -2085,6 +2095,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _phoneProductList[index].name,
               main_price: _phoneProductList[index].main_price,
               stroked_price: _phoneProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _phoneProductList[index].has_discount);
         },
       );
@@ -2126,6 +2138,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _clothesProductList[index].name,
               main_price: _babyProductList[index].main_price,
               stroked_price: _babyProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _babyProductList[index].has_discount);
         },
       );
@@ -2167,6 +2181,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _healthProductList[index].name,
               main_price: _healthProductList[index].main_price,
               stroked_price: _healthProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _healthProductList[index].has_discount);
         },
       );
@@ -2208,6 +2224,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _freeProductList[index].name,
               main_price: _freeProductList[index].main_price,
               stroked_price: _freeProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _freeProductList[index].has_discount);
         },
       );
@@ -2249,6 +2267,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _electricProductList[index].name,
               main_price: _electricProductList[index].main_price,
               stroked_price: _electricProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _electricProductList[index].has_discount);
         },
       );
@@ -2290,6 +2310,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _computerProductList[index].name,
               main_price: _computerProductList[index].main_price,
               stroked_price: _computerProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _computerProductList[index].has_discount);
         },
       );
@@ -2331,6 +2353,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _geoProductList[index].name,
               main_price: _geoProductList[index].main_price,
               stroked_price: _geoProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _geoProductList[index].has_discount);
         },
       );
@@ -2372,6 +2396,8 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               name: _mathProductList[index].name,
               main_price: _mathProductList[index].main_price,
               stroked_price: _mathProductList[index].stroked_price,
+              buyToWinProducts: false,
+              isAuction: false,
               has_discount: _mathProductList[index].has_discount);
         },
       );
@@ -2412,6 +2438,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               image: _featuredProductList[index].thumbnail_image,
               name: _featuredProductList[index].name,
               main_price: _featuredProductList[index].main_price,
+              buyToWinProducts: false,
               isAuction: false,
               stroked_price: _featuredProductList[index].stroked_price,
               // isAuction: false,
@@ -3103,7 +3130,7 @@ class _AuctionState extends State<Auction> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Auction products",
+                                  " ",
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ],
@@ -3402,7 +3429,7 @@ class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Featured Products",
+                                  " ",
                                   style: TextStyle(fontSize: 13),
                                 ),
                               ],
@@ -3534,10 +3561,6 @@ class _FeaturedState extends State<Featured> with TickerProviderStateMixin {
     );
   }
 }
-
-
-
-
 
 class _BuywinState extends State<Buywin> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();

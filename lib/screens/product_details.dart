@@ -45,6 +45,15 @@ import '../ui_elements/list_product_card.dart';
 import '../ui_elements/mini_product_card.dart';
 import 'package:http/http.dart' as http;
 
+// _launchURLApp() async {
+//   var url = Uri.parse("https://www.geeksforgeeks.org/");
+//   if (await canLaunchUrl(url)) {
+//     await launchUrl(url);
+//   } else {
+//     throw 'Could not launch $url';
+//   }
+// }
+
 class ProductDetails extends StatefulWidget {
   int id;
   bool isAuction;
@@ -2420,6 +2429,14 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: [
               isAuction == true && auctionStatus == false
                   ? Expanded(
+                      // child: FlatButton(
+                      //   minWidth: MediaQuery.of(context).size.width / 2 - .5,
+                      //   height: 50,
+                      //   color: MyTheme.golden,
+                      //   disabledColor: Colors.grey,
+                      //   shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(0.0),
+                      //   ),
                       child: TextButton(
                         style: TextButton.styleFrom(
                           minimumSize: Size(
@@ -2430,6 +2447,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
+                          //  side:
+                          //   BorderSide(color: Colors.black, width: 1.0)
                         ),
                         child: Text(
                           AppLocalizations.of(context).product_screen_bid_now,
@@ -2589,15 +2608,22 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     )
                   : SizedBox(),
-              isAuction == true ||
-                      normalProduct == true ||
-                      // (isAuction == false && buyTowinStatus == false) ||
-                      voucherDateStatus == false ||
-                      // (widget.buyToWinProducts == true &&
-                      //  buyTowinStatus == true) || raffelStatus == true
+              normalProduct == true ||
                       (widget.buyToWinProducts == true &&
                           buyTowinStatus == false) ||
+                      (widget.buyToWinProducts == true &&
+                          voucherDateStatus == false) ||
+                      (normalProduct == true &&
+                          widget.buyToWinProducts == false &&
+                          isAuction == false) ||
+                      (widget.buyToWinProducts == false &&
+                          isAuction == false) ||
                       raffelStatus == false
+                  // isAuction == true ||
+                  //         normalProduct == false ||
+                  //         (widget.buyToWinProducts == true &&
+                  //             buyTowinStatus == true) ||
+                  //         raffelStatus == true
                   ? SizedBox()
                   : Expanded(
                       child: TextButton(
@@ -2627,18 +2653,23 @@ class _ProductDetailsState extends State<ProductDetails> {
               SizedBox(
                 width: 1,
               ),
-              raffelStatus == false ||
-                      buyTowinStatus == false ||
-                      voucherDateStatus == false ||
-                      (isAuction == true && auctionStatus == false) ||
-                      // (isAuction == false && buyTowinStatus == false) ||
-                      // (isAuction == false && voucherDateStatus == false) ||
-
-                      // (isAuction == false && raffelStatus == false) ||
-                      // (widget.buyToWinProducts == true && buyTowinStatus == true) ||
+              (isAuction == true && auctionStatus == false) ||
+                      (widget.buyToWinProducts == true &&
+                          buyTowinStatus == false) ||
+                      (widget.buyToWinProducts == true &&
+                          voucherDateStatus == false) ||
                       (normalProduct == true &&
                           widget.buyToWinProducts == false &&
                           isAuction == false)
+
+                  // // raffelStatus == false
+                  // (isAuction == true && auctionStatus == false) ||
+                  //         (isAuction == false && buyTowinStatus == false) ||
+                  //         (isAuction == false && voucherDateStatus == false) ||
+                  //         // (isAuction == false && raffelStatus == false) ||
+                  //         (normalProduct == true &&
+                  //             widget.buyToWinProducts == false &&
+                  //             isAuction == false)
                   // (auctionStatus == true && buyTowinStatus == true ||
                   //         voucherDateStatus == true)
                   ? Expanded(
@@ -3307,11 +3338,36 @@ TimerBuilder buildTimer(
         );
       }
     });
-  } else if (productDetails.auction_product != null && isAuction == true) {
+  }
+  // else if (widget.buyToWinProducts == true) {
+  //   return TimerBuilder.periodic(
+  //     const Duration(seconds: 1),
+  //     builder: (context) {
+  //       return Container(
+  //         width: 35,
+  //         height: 40,
+  //         child: Material(
+  //           borderRadius: BorderRadius.circular(8.0),
+  //           color: MyTheme.accent_color,
+  //           child: Center(
+  //               child: Text(
+  //             "Voucher Has Ended:",
+  //             style: TextStyle(color: Colors.white, fontSize: 20),
+  //           )),
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
+
+  else if (productDetails.auction_product != null && isAuction == true) {
     int dateNow = DateTime.now().millisecondsSinceEpoch;
 
     int endDate = int.parse(productDetails.auction_end_date + "000");
 
+    // int endDate = productDetails.auction_end_date == null
+    //     ? 0
+    //     : int.parse(productDetails.auction_end_date + "000");
     return TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
       if (dateNow > endDate) {
         auctionStatus = true;
