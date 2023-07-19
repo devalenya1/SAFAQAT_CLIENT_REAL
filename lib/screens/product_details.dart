@@ -2600,40 +2600,37 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     )
                   : SizedBox(),
-              // widget.buyToWinProducts == true && buyTowinStatus == false
-              //     ? SizedBox()
-              //     : Expanded(
-              //         child: TextButton(
-              //           style: TextButton.styleFrom(
-              //             minimumSize: Size(
-              //                 MediaQuery.of(context).size.width / 2 - .5, 50),
-              //             backgroundColor: MyTheme.golden,
-              //             padding: EdgeInsets.all(0),
-              //             shape: RoundedRectangleBorder(
-              //               borderRadius: BorderRadius.circular(0.0),
-              //             ),
-              //           ),
-              //           child: Text(
-              //             AppLocalizations.of(context)
-              //                 .product_details_screen_button_add_to_cart,
-              //             // 'Let see',
-              //             style: TextStyle(
-              //                 color: Colors.white,
-              //                 fontSize: 16,
-              //                 fontWeight: FontWeight.w600),
-              //           ),
-              //           onPressed: () {
-              //             onPressAddToCart(context, _addedToCartSnackbar);
-              //           },
-              //         ),
-              //       ),
-              // SizedBox(
-              //   width: 1,
-              // ),
-              (widget.buyToWinProducts == true && buyTowinStatus == false) ||
-                      (widget.buyToWinProducts == true &&
-                          voucherDateStatus == false) ||
-                      normalProduct == true
+              normalProduct == true
+                  ? SizedBox()
+                  : Expanded(
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 2 - .5, 50),
+                          backgroundColor: MyTheme.golden,
+                          padding: EdgeInsets.all(0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                          ),
+                        ),
+                        child: Text(
+                          AppLocalizations.of(context)
+                              .product_details_screen_button_add_to_cart,
+                          // 'Let see',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        onPressed: () {
+                          onPressAddToCart(context, _addedToCartSnackbar);
+                        },
+                      ),
+                    ),
+              SizedBox(
+                width: 1,
+              ),
+              (widget.buyToWinProducts == true && buyTowinStatus == false)
                   ? SizedBox()
                   : Expanded(
                       child: TextButton(
