@@ -64,7 +64,7 @@ class ProductRepository {
   // }
 
   Future<ProductMiniResponse> getAllProducts({page = 1}) async {
-    Uri url = Uri.parse("${AppConfig.BASE_URL}/products/");
+    Uri url = Uri.parse("${AppConfig.BASE_URL}/products?page=${page}");
     final response = await http.get(url, headers: {
       "App-Language": app_language.$,
     });
