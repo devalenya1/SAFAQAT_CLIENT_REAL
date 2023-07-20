@@ -2417,7 +2417,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   }
 
   buildBottomAppBar(BuildContext context, _addedToCartSnackbar, isAuction) {
-    // int dateNow = DateTime.now().millisecondsSinceEpoch;
+    // ADD TO CART STARTS
     if (_productDetails.buytowin_end_date != null) {
       int dateNow = DateTime.now().millisecondsSinceEpoch;
       int endDate = int.parse(_productDetails.buytowin_end_date + "000");
@@ -3307,9 +3307,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                   name: _topProducts[index].name,
                   main_price: _topProducts[index].main_price,
                   stroked_price: _topProducts[index].stroked_price,
-                  has_discount: _topProducts[index].has_discount,
-                  isAuction: false,
-                  buyToWinProducts: widget.buyToWinProducts),
+                  has_discount: _topProducts[index].has_discount
+                  // isAuction: false,
+                  // buyToWinProducts: widget.buyToWinProducts
+                  ),
             );
           },
         ),
@@ -3367,9 +3368,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                     name: _relatedProducts[index].name,
                     main_price: _relatedProducts[index].main_price,
                     stroked_price: _relatedProducts[index].stroked_price,
-                    has_discount: _relatedProducts[index].has_discount,
-                    isAuction: false,
-                    buyToWinProducts: widget.buyToWinProducts),
+                    has_discount: _relatedProducts[index].has_discount
+                    // isAuction: false,
+                    // buyToWinProducts: widget.buyToWinProducts
+                    ),
               );
             },
           ),
@@ -3758,41 +3760,15 @@ TimerBuilder buildTimer(
       }
     });
   }
-  // else if (widget.buyToWinProducts == true) {
-  //   return TimerBuilder.periodic(
-  //     const Duration(seconds: 1),
-  //     builder: (context) {
-  //       return Container(
-  //         width: 35,
-  //         height: 40,
-  //         child: Material(
-  //           borderRadius: BorderRadius.circular(8.0),
-  //           color: MyTheme.accent_color,
-  //           child: Center(
-  //               child: Text(
-  //             "Voucher Has Ended:",
-  //             style: TextStyle(color: Colors.white, fontSize: 20),
-  //           )),
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
-
   else if (productDetails.auction_product != null && isAuction == true) {
     int dateNow = DateTime.now().millisecondsSinceEpoch;
 
     int endDate = int.parse(productDetails.auction_end_date + "000");
 
-    // int endDate = productDetails.auction_end_date == null
-    //     ? 0
-    //     : int.parse(productDetails.auction_end_date + "000");
     return TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
       if (dateNow > endDate) {
         auctionStatus = true;
         return Container(
-          // width: 35,
-          // width: double.infinity,
           height: 40,
           child: Material(
             borderRadius: BorderRadius.circular(8.0),

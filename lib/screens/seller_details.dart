@@ -334,7 +334,7 @@ class _SellerDetailsState extends State<SellerDetails> {
               main_price: _auctionProducts[index].main_price,
               stroked_price: _auctionProducts[index].stroked_price,
               // buyToWinProducts: false,
-              isAuction: true,
+              // isAuction: true,
               has_discount: _auctionProducts[index].has_discount);
         },
       );
@@ -500,8 +500,8 @@ class _SellerDetailsState extends State<SellerDetails> {
                   name: _topProducts[index].name,
                   main_price: _topProducts[index].main_price,
                   stroked_price: _topProducts[index].stroked_price,
-                  buyToWinProducts: false,
-                  isAuction: false,
+                  // buyToWinProducts: false,
+                  // isAuction: false,
                   has_discount: _topProducts[index].has_discount),
             );
           },
@@ -556,8 +556,8 @@ class _SellerDetailsState extends State<SellerDetails> {
                   name: _newArrivalProducts[index].name,
                   main_price: _newArrivalProducts[index].main_price,
                   stroked_price: _newArrivalProducts[index].stroked_price,
-                  buyToWinProducts: false,
-                  isAuction: false,
+                  // buyToWinProducts: false,
+                  // isAuction: false,
                   has_discount: _newArrivalProducts[index].has_discount,
                 ),
               );

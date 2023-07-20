@@ -207,8 +207,8 @@ class _SellerProductsState extends State<SellerProducts> {
                 main_price: _productList[index].main_price,
                 stroked_price: _productList[index].stroked_price,
                 has_discount: _productList[index].has_discount,
-                buyToWinProducts: false,
-                isAuction: false,
+                // buyToWinProducts: false,
+                // isAuction: false,
               );
             },
           ),
