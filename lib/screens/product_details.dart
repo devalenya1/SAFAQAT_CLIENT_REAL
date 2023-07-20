@@ -2632,9 +2632,11 @@ class _ProductDetailsState extends State<ProductDetails> {
               // ),
               // buyTowinStatus == false ||
               //         voucherDateStatus == false ||
-              (normalProduct == true &&
-                      widget.buyToWinProducts == true &&
-                      isAuction == false)
+              normalProduct == true ||
+                      (widget.buyToWinProducts == true &&
+                          buyTowinStatus == false) ||
+                      (widget.buyToWinProducts == true &&
+                          voucherDateStatus == false)
                   ? SizedBox()
                   : Expanded(
                       child: TextButton(
