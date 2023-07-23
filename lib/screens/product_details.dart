@@ -930,40 +930,40 @@ class _ProductDetailsState extends State<ProductDetails> {
 
                 SliverList(
                     delegate: SliverChildListDelegate([
-                  widget.isAuction == true
-                      ? Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                            16.0,
-                            8.0,
-                            16.0,
-                            0.0,
+                  // widget.isAuction == true
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      16.0,
+                      8.0,
+                      16.0,
+                      0.0,
+                    ),
+                    child: _productDetails != null
+                        ? buildUnitRow()
+                        : ShimmerHelper().buildBasicShimmer(
+                            height: 30.0,
                           ),
-                          child: _productDetails != null
-                              ? buildUnitRow()
-                              : ShimmerHelper().buildBasicShimmer(
-                                  height: 30.0,
-                                ),
-                        )
-                      : SizedBox(),
+                  ),
+                  // : SizedBox(),
                 ])),
 
                 SliverList(
                     delegate: SliverChildListDelegate([
-                  widget.isAuction == true
-                      ? Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                            16.0,
-                            8.0,
-                            16.0,
-                            0.0,
+                  // widget.isAuction == true
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      16.0,
+                      8.0,
+                      16.0,
+                      0.0,
+                    ),
+                    child: _productDetails != null
+                        ? buildStartingBidRow()
+                        : ShimmerHelper().buildBasicShimmer(
+                            height: 30.0,
                           ),
-                          child: _productDetails != null
-                              ? buildStartingBidRow()
-                              : ShimmerHelper().buildBasicShimmer(
-                                  height: 30.0,
-                                ),
-                        )
-                      : SizedBox(),
+                  ),
+                  // : SizedBox(),
                 ])),
 
                 /*SliverList(
@@ -1490,7 +1490,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           return Text(
             AppLocalizations.of(context).product_screen_win,
             style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
+                fontSize: 26, fontWeight: FontWeight.bold, color: Colors.red),
           );
         }
         return Container();
@@ -1751,57 +1751,63 @@ class _ProductDetailsState extends State<ProductDetails> {
 //---------------
 //---------------
   Row buildStartingBidRow() {
-    return Row(
-      children: [
-        Padding(
-          padding: app_language_rtl.$
-              ? EdgeInsets.only(left: 8.0)
-              : EdgeInsets.only(right: 8.0),
-          child: Container(
-            width: 75,
-            child: Text(
-              AppLocalizations.of(context).product_screen_start_bid,
-              //AppLocalizations.of(context).product_details_screen_total_price,
-              style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
+    if (_productDetails.starting_bid != null) {
+      return Row(
+        children: [
+          Padding(
+            padding: app_language_rtl.$
+                ? EdgeInsets.only(left: 8.0)
+                : EdgeInsets.only(right: 8.0),
+            child: Container(
+              width: 75,
+              child: Text(
+                AppLocalizations.of(context).product_screen_start_bid,
+                //AppLocalizations.of(context).product_details_screen_total_price,
+                style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
+              ),
             ),
           ),
-        ),
-        Text(
-          _productDetails.starting_bid,
-          style: TextStyle(
-              color: MyTheme.accent_color,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w600),
-        )
-      ],
-    );
+          Text(
+            _productDetails.starting_bid,
+            style: TextStyle(
+                color: MyTheme.accent_color,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w600),
+          )
+        ],
+      );
+    }
+    ;
   }
 
   Row buildUnitRow() {
-    return Row(
-      children: [
-        Padding(
-          padding: app_language_rtl.$
-              ? EdgeInsets.only(left: 8.0)
-              : EdgeInsets.only(right: 8.0),
-          child: Container(
-            width: 75,
-            child: Text(
-              AppLocalizations.of(context).product_screen_condition,
-              //AppLocalizations.of(context).product_details_screen_total_price,
-              style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
+    if (_productDetails.starting_bid != null) {
+      return Row(
+        children: [
+          Padding(
+            padding: app_language_rtl.$
+                ? EdgeInsets.only(left: 8.0)
+                : EdgeInsets.only(right: 8.0),
+            child: Container(
+              width: 75,
+              child: Text(
+                AppLocalizations.of(context).product_screen_condition,
+                //AppLocalizations.of(context).product_details_screen_total_price,
+                style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
+              ),
             ),
           ),
-        ),
-        Text(
-          _productDetails.unit.toString(),
-          style: TextStyle(
-              color: MyTheme.accent_color,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w600),
-        )
-      ],
-    );
+          Text(
+            _productDetails.unit.toString(),
+            style: TextStyle(
+                color: MyTheme.accent_color,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w600),
+          )
+        ],
+      );
+    }
+    ;
   }
 //----------------
 //---------------
@@ -3579,11 +3585,11 @@ class ProductDetailController extends GetxController {
   var isStartBidding = false.obs;
 }
 
-bool auctionStatus; // true mean to disable
-bool buyTowinStatus;
-bool voucherDateStatus;
-bool normalProduct;
-bool raffelStatus = false;
+// bool auctionStatus; // true mean to disable
+// bool buyTowinStatus;
+// bool voucherDateStatus;
+// bool normalProduct;
+// bool raffelStatus = false;
 TimerBuilder buildTimer(
     DetailedProduct productDetails, isAuction, buyToWinProducts) {
   log("Voucher  1x${productDetails.voucher_end_date.toString()}");
@@ -3596,7 +3602,7 @@ TimerBuilder buildTimer(
       int endDate = int.parse(productDetails.buytowin_end_date + "000");
 
       if (dateNow > endDate) {
-        buyTowinStatus = true;
+        // buyTowinStatus = true;
         return Container(
           // width: 35,
           height: 40,
@@ -3617,7 +3623,7 @@ TimerBuilder buildTimer(
           ),
         );
       } else {
-        buyTowinStatus = false;
+        // buyTowinStatus = false;
 
         return CountdownTimer(
           endTime: endDate,
@@ -3679,7 +3685,7 @@ TimerBuilder buildTimer(
 
     return TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
       if (dateNow > endDate) {
-        voucherDateStatus = true;
+        // voucherDateStatus = true;
         return TimerBuilder.periodic(
           const Duration(seconds: 1),
           builder: (context) {
@@ -3699,7 +3705,7 @@ TimerBuilder buildTimer(
           },
         );
       } else {
-        voucherDateStatus = false;
+        // voucherDateStatus = false;
 
         return CountdownTimer(
           endTime: endDate,
@@ -3759,15 +3765,14 @@ TimerBuilder buildTimer(
         );
       }
     });
-  }
-  else if (productDetails.auction_product != null && isAuction == true) {
+  } else if (productDetails.auction_end_date != null) {
     int dateNow = DateTime.now().millisecondsSinceEpoch;
 
     int endDate = int.parse(productDetails.auction_end_date + "000");
 
     return TimerBuilder.periodic(Duration(seconds: 1), builder: (context) {
       if (dateNow > endDate) {
-        auctionStatus = true;
+        // auctionStatus = true;
         return Container(
           height: 40,
           child: Material(
@@ -3787,7 +3792,7 @@ TimerBuilder buildTimer(
           ),
         );
       } else {
-        auctionStatus = false;
+        // auctionStatus = false;
         return CountdownTimer(
           endTime: endDate,
           widgetBuilder: (_, CurrentRemainingTime time) {
@@ -3847,34 +3852,35 @@ TimerBuilder buildTimer(
         );
       }
     });
-  } else {
-    normalProduct = true;
-    if (buyToWinProducts == true) {
-      normalProduct = false;
-      raffelStatus = true;
-      return TimerBuilder.periodic(const Duration(seconds: 1),
-          builder: (context) => Container(
-                // width: 35,
-                height: 40,
-                child: Material(
-                  borderRadius: BorderRadius.circular(8.0),
-                  color: MyTheme.accent_color,
-                  child: Center(
-                      child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                      child: Text(
-                        AppLocalizations.of(context)
-                            .product_screen_deal_has_ended,
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ),
-                  )),
-                ),
-              ));
-    }
   }
+  // else {
+  //   // normalProduct = true;
+  //   if (buyToWinProducts == true) {
+  //     // normalProduct = false;
+  //     // raffelStatus = true;
+  //     return TimerBuilder.periodic(const Duration(seconds: 1),
+  //         builder: (context) => Container(
+  //               // width: 35,
+  //               height: 40,
+  //               child: Material(
+  //                 borderRadius: BorderRadius.circular(8.0),
+  //                 color: MyTheme.accent_color,
+  //                 child: Center(
+  //                     child: FittedBox(
+  //                   fit: BoxFit.scaleDown,
+  //                   child: Padding(
+  //                     padding: const EdgeInsets.symmetric(horizontal: 4.0),
+  //                     child: Text(
+  //                       AppLocalizations.of(context)
+  //                           .product_screen_deal_has_ended,
+  //                       style: TextStyle(color: Colors.white, fontSize: 20),
+  //                     ),
+  //                   ),
+  //                 )),
+  //               ),
+  //             ));
+  //   }
+  // }
 }
 
 Padding buildTextTimer(String text, String time) {
